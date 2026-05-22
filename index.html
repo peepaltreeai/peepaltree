@@ -402,14 +402,11 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
         </div>
       </div>
 
-      <!-- 
-        FORMSPREE SETUP (3 steps, ~2 minutes):
-        1. Go to https://formspree.io → sign up free
-        2. Create a new form → copy your form endpoint (looks like https://formspree.io/f/xyzabcde)
-        3. Replace YOUR_FORMSPREE_ID below with just the ID part (e.g. xyzabcde)
-        Free tier: 50 submissions/month, emails land in your inbox. No backend needed.
-      -->
-      <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <!-- Web3Forms — active, 250 submissions/month free -->
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="d07bf69b-2863-4fb3-ab31-f9bc475f73e7">
+        <input type="hidden" name="subject" value="New enquiry — Peepal Tree Advisory">
+        <input type="hidden" name="redirect" value="false">
         <div class="form-row">
           <label class="form-label" for="name">Full Name</label>
           <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
@@ -463,13 +460,6 @@ var successMsg = document.getElementById('form-success');
 var errorMsg = document.getElementById('form-error');
 
 form.addEventListener('submit', function(e) {
-  // If Formspree ID not yet set, fall back to local confirmation
-  if (form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
-    e.preventDefault();
-    form.reset();
-    successMsg.style.display = 'block';
-    return;
-  }
   e.preventDefault();
   submitBtn.textContent = 'Sending...';
   submitBtn.disabled = true;
@@ -478,14 +468,16 @@ form.addEventListener('submit', function(e) {
     body: new FormData(form),
     headers: { 'Accept': 'application/json' }
   }).then(function(res) {
-    if (res.ok) {
+    return res.json();
+  }).then(function(data) {
+    if (data.success) {
       form.reset();
       successMsg.style.display = 'block';
-      submitBtn.textContent = 'Send Message';
-      submitBtn.disabled = false;
     } else {
-      throw new Error('Server error');
+      throw new Error('Failed');
     }
+    submitBtn.textContent = 'Send Message';
+    submitBtn.disabled = false;
   }).catch(function() {
     errorMsg.style.display = 'block';
     submitBtn.textContent = 'Send Message';
