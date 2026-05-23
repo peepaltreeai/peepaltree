@@ -3,246 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peepal Tree Advisory — Full-Stack Financial Services · India</title>
-<meta name="description" content="India's AI-native, multi-license wealth and credit platform. SEBI/RBI regulated. 1,000+ HNI clients. ₹1,300 Cr in custody.">
+<title>Peepal Tree Advisory — Intelligent Capital, Rooted in India</title>
+<meta name="description" content="AI-native, multi-license wealth and credit platform. SEBI/RBI regulated. 1,000+ HNI clients. ₹1,300 Cr in custody.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --forest:      #0D3322;
-  --forest-mid:  #1A5C3E;
-  --forest-light:#2E8B57;
-  --leaf:        #3DAA6F;
-  --leaf-pale:   #E8F5EE;
-  --gold:        #C9922A;
-  --gold-mid:    #E5AE4A;
-  --ink:         #111827;
-  --slate:       #4B5563;
-  --muted:       #9CA3AF;
-  --border:      rgba(13,51,34,0.11);
-  --bg:          #F9FAF8;
-  --bg2:         #F2F4F0;
+  --forest:     #0D3322;
+  --forest-mid: #1A5C3E;
+  --leaf:       #3DAA6F;
+  --leaf-pale:  #E8F5EE;
+  --amber:      #C8A96E;
+  --amber-bright:#E5AE4A;
+  --ink:        #111827;
+  --slate:      #4B5563;
+  --muted:      #9CA3AF;
+  --border:     rgba(13,51,34,0.1);
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans:  'Outfit', system-ui, sans-serif;
   --mono:  'DM Mono', monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--bg);overflow-x:hidden;line-height:1.65}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:#fff;overflow-x:hidden;line-height:1.65}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,51,34,0.97);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:62px;border-bottom:1px solid rgba(255,255,255,0.07)}
-.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-brand-name{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:.02em}
-.nav-brand-name span{color:var(--gold-mid)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--gold-mid)}
-.nav-cta{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-mid);border:1px solid rgba(229,174,74,.35);padding:.45rem 1.3rem;text-decoration:none;transition:all .2s}
-.nav-cta:hover{background:rgba(229,174,74,.1);border-color:var(--gold-mid)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,51,34,0.98);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:64px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-brand-name{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff;letter-spacing:.02em}
+.nav-brand-name span{color:var(--amber-bright)}
+.nav-links{display:flex;gap:3.5rem;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber-bright)}
+.nav-cta{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-bright);border:1px solid rgba(200,169,110,.3);padding:.5rem 1.4rem;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:rgba(200,169,110,.08);border-color:var(--amber-bright)}
 
-/* ── HERO (dark — identity) ── */
-.hero{min-height:100vh;background:var(--forest);position:relative;display:flex;align-items:center;padding:5rem 4rem 4rem;overflow:hidden}
-.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(61,170,111,.08) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.hero-glow{position:absolute;top:-180px;right:-180px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,146,42,.07) 0%,transparent 65%);pointer-events:none}
-.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 320px;gap:5rem;align-items:center}
-.hero-tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
-.hero-tag::before{content:'';width:28px;height:1px;background:var(--gold-mid);flex-shrink:0}
-.hero-h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.8rem);font-weight:700;color:#fff;line-height:1.07;margin-bottom:1.25rem}
-.hero-h1 em{font-style:italic;color:var(--gold-mid)}
-.hero-sub{font-size:1rem;color:rgba(255,255,255,.48);max-width:500px;margin-bottom:2.5rem}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-gold{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:#fff;border:none;padding:.85rem 2rem;cursor:pointer;text-decoration:none;transition:opacity .2s;display:inline-block}
-.btn-gold:hover{opacity:.88}
-.btn-outline-light{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);padding:.85rem 2rem;text-decoration:none;transition:all .2s;display:inline-block}
-.btn-outline-light:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+/* ── HERO — dark, full width, HRT/Jane Street energy ── */
+.hero{min-height:100vh;background:var(--forest);position:relative;display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 4rem;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(61,170,111,.06) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.hero-rule{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,.3),transparent)}
+.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%}
+.hero-tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-bottom:2rem;display:flex;align-items:center;gap:.75rem}
+.hero-tag::before{content:'';width:32px;height:1px;background:var(--amber);flex-shrink:0}
+/* Single bold declarative H1 — full width, no line breaks forced */
+.hero-h1{font-family:var(--serif);font-size:clamp(3rem,6vw,5.6rem);font-weight:700;color:#fff;line-height:1.04;margin-bottom:2rem;max-width:900px;letter-spacing:-.01em}
+.hero-h1 em{font-style:italic;color:var(--amber-bright)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.42);max-width:480px;margin-bottom:3rem;font-weight:300;line-height:1.8}
+.hero-actions{display:flex;gap:1rem;align-items:center;margin-bottom:5rem}
+.btn-amber{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;background:var(--amber);color:#fff;border:none;padding:.9rem 2.2rem;cursor:pointer;text-decoration:none;transition:opacity .2s;display:inline-block;font-weight:500}
+.btn-amber:hover{opacity:.85}
+.btn-ghost{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.15);padding:.9rem 2.2rem;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+/* HRT-style: one big stat, full width, bottom of hero */
+.hero-stat-row{display:flex;gap:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.07)}
+.hero-stat{}
+.hs-num{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--amber-bright);line-height:1}
+.hs-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:.3rem}
 
-/* hero trust card */
-.hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);padding:2rem;display:flex;flex-direction:column;gap:0}
-.hc-stat{padding:1.4rem 0}
-.hc-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold-mid);line-height:1;margin-bottom:.25rem}
-.hc-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32)}
-.hc-divider{height:1px;background:rgba(255,255,255,.07)}
+/* ── LICENSE STRIP ── */
+.license-strip{background:#fff;border-bottom:1px solid var(--border);padding:1.2rem 4rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.ls-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.ls-div{width:1px;height:16px;background:var(--border);flex-shrink:0}
+.ls-badge{display:flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;color:var(--forest-mid)}
+.ls-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--leaf);flex-shrink:0}
 
-/* ── LICENSE STRIP (white — functional) ── */
-.license-strip{background:#fff;border-bottom:1px solid var(--border);padding:1.4rem 4rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
-.ls-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);white-space:nowrap;margin-right:.5rem}
-.ls-div{width:1px;height:18px;background:var(--border);flex-shrink:0}
-.ls-badge{display:flex;align-items:center;gap:.45rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.06em;color:var(--forest-mid)}
-.ls-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--leaf);flex-shrink:0}
-
-/* ── SERVICES (light — functional) ── */
-/* Intentionally light — "here's what we do, practically" */
-.services-section{background:var(--bg);padding:5.5rem 4rem}
+/* ── SHARED SECTION STYLES ── */
+.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--leaf);margin-bottom:.85rem}
+.section-h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;line-height:1.12;color:var(--forest);margin-bottom:1rem}
+.section-lead{font-size:.98rem;color:var(--slate);max-width:520px;line-height:1.8}
 .inner{max-width:1160px;margin:0 auto}
-.section-tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--leaf);margin-bottom:.85rem}
-.section-h2{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,3rem);font-weight:700;line-height:1.15;color:var(--forest);margin-bottom:1rem}
-.section-lead{font-size:1rem;color:var(--slate);max-width:560px;line-height:1.75;margin-bottom:3.5rem}
-.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border)}
-.svc-card{background:#fff;padding:2.5rem;position:relative;overflow:hidden;transition:background .25s}
-.svc-card:hover{background:var(--leaf-pale)}
-.svc-top-bar{position:absolute;top:0;left:0;right:0;height:3px}
-.svc-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;color:var(--muted);margin-bottom:1rem}
-.svc-name{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--forest);margin-bottom:.25rem}
-.svc-lic{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
-.svc-desc{font-size:.92rem;color:var(--slate);line-height:1.78}
-.svc-tags{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:1.25rem}
-.svc-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;color:var(--forest-mid);background:var(--leaf-pale);padding:.2rem .6rem}
 
-/* ── WHY US (dark — identity/philosophy) ── */
-/* Dark again = intentional. This is who we are, not just what we sell. */
-.why-section{background:var(--forest);padding:5.5rem 4rem}
-.why-section .section-tag{color:var(--gold-mid)}
+/* ── SERVICES — pure white, no grid lines ── */
+.services-section{background:#fff;padding:6rem 4rem}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;margin-top:3.5rem}
+.svc-card{padding:0;position:relative}
+.svc-top-bar{height:2px;margin-bottom:2rem}
+.svc-num{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;color:var(--muted);margin-bottom:.85rem}
+.svc-name{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--forest);margin-bottom:.2rem}
+.svc-lic{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.85rem}
+.svc-desc{font-size:.92rem;color:var(--slate);line-height:1.8}
+.svc-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1.25rem}
+.svc-tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;color:var(--forest-mid);background:var(--leaf-pale);padding:.2rem .55rem}
+
+/* ── WHY US — dark ── */
+.why-section{background:var(--forest);padding:6rem 4rem}
+.why-section .section-tag{color:var(--amber)}
 .why-section .section-h2{color:#fff}
-.why-section .section-lead{color:rgba(255,255,255,.42);margin-bottom:3.5rem}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06)}
-.why-card{background:var(--forest);padding:2.5rem;transition:background .25s}
-.why-card:hover{background:rgba(26,92,62,.6)}
-.why-icon{width:40px;height:40px;background:rgba(229,174,74,.1);border:1px solid rgba(229,174,74,.18);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
-.why-icon svg{width:20px;height:20px;stroke:var(--gold-mid);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.why-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.65rem}
-.why-desc{font-size:.88rem;color:rgba(255,255,255,.42);line-height:1.78}
+.why-section .section-lead{color:rgba(255,255,255,.38);margin-bottom:3.5rem}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
+.why-card{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.08)}
+.why-icon{width:36px;height:36px;margin-bottom:1.25rem;opacity:.7}
+.why-icon svg{width:36px;height:36px;stroke:var(--amber);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.why-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.why-desc{font-size:.88rem;color:rgba(255,255,255,.38);line-height:1.8}
 
-/* ── WHO WE SERVE (light — functional) ── */
-/* Back to light — practical, "is this for me?" */
-.clients-section{background:var(--bg2);padding:5.5rem 4rem}
-.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:0}
-.client-card{background:#fff;border:1px solid var(--border);padding:2rem;border-top:3px solid transparent}
+/* ── WHO WE SERVE — pure white ── */
+.clients-section{background:#fff;padding:6rem 4rem}
+.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:3.5rem}
+.client-card{padding:2rem 0;border-top:2px solid}
 .client-card.retail{border-top-color:#3B82F6}
-.client-card.hni{border-top-color:var(--gold)}
+.client-card.hni{border-top-color:var(--amber)}
 .client-card.nri{border-top-color:var(--leaf)}
-.client-type{font-family:var(--mono);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.55rem}
-.client-name{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--forest);margin-bottom:.65rem}
-.client-desc{font-size:.88rem;color:var(--slate);line-height:1.75}
+.client-type{font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.55rem}
+.client-name{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--forest);margin-bottom:.65rem}
+.client-desc{font-size:.88rem;color:var(--slate);line-height:1.78}
 
-/* ── CONTACT (dark — close, personal, committed) ── */
-/* Closing on dark makes the page feel resolved and intentional, not trailing off */
-.contact-section{background:var(--forest);padding:5.5rem 4rem}
-.contact-section .section-tag{color:var(--gold-mid)}
+/* ── CONTACT — dark ── */
+.contact-section{background:var(--forest);padding:6rem 4rem}
+.contact-section .section-tag{color:var(--amber)}
 .contact-section .section-h2{color:#fff}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:3rem}
-.contact-info p{font-size:.95rem;color:rgba(255,255,255,.42);line-height:1.85;margin-bottom:2rem}
+.contact-info p{font-size:.95rem;color:rgba(255,255,255,.38);line-height:1.9;margin-bottom:2rem}
 .contact-detail{display:flex;flex-direction:column;gap:1.1rem}
 .cd-row{display:flex;gap:1rem;align-items:baseline}
-.cd-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);min-width:72px;flex-shrink:0}
-.cd-val{font-size:.9rem;color:rgba(255,255,255,.55)}
-.cd-val a{color:var(--gold-mid);text-decoration:none}
+.cd-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.22);min-width:72px;flex-shrink:0}
+.cd-val{font-size:.9rem;color:rgba(255,255,255,.5)}
+.cd-val a{color:var(--amber-bright);text-decoration:none}
 .cd-val a:hover{color:#fff}
-
-/* form on dark bg */
 .form-row{margin-bottom:1.1rem}
-.form-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:.45rem}
-.form-input{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;font-family:var(--sans);font-size:.92rem;font-weight:300;padding:.75rem 1rem;outline:none;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
-.form-input:focus{border-color:rgba(229,174,74,.5)}
-.form-input::placeholder{color:rgba(255,255,255,.2)}
+.form-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block;margin-bottom:.45rem}
+.form-input{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:#fff;font-family:var(--sans);font-size:.92rem;font-weight:300;padding:.75rem 1rem;outline:none;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
+.form-input:focus{border-color:rgba(200,169,110,.4)}
+.form-input::placeholder{color:rgba(255,255,255,.18)}
 .form-input option{background:var(--forest);color:#fff}
 textarea.form-input{resize:vertical;min-height:90px}
-.form-submit{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);background:var(--gold-mid);border:none;padding:.9rem 2.2rem;cursor:pointer;transition:opacity .2s;width:100%}
+.form-submit{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);background:var(--amber-bright);border:none;padding:.9rem 2.2rem;cursor:pointer;transition:opacity .2s;width:100%;font-weight:500}
 .form-submit:hover{opacity:.88}
-.form-msg{margin-top:.75rem;font-family:var(--mono);font-size:.65rem;color:var(--gold-mid);display:none;letter-spacing:.06em}
+.form-msg{margin-top:.75rem;font-family:var(--mono);font-size:.63rem;color:var(--amber-bright);display:none;letter-spacing:.06em}
 .form-err{color:#f87171}
 
 /* ── FOOTER ── */
-footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.06)}
+footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.05)}
 .footer-brand{font-family:var(--serif);font-size:1rem;font-weight:700;color:#fff}
-.footer-brand span{color:var(--gold-mid)}
-.footer-copy{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;color:rgba(255,255,255,.2)}
+.footer-brand span{color:var(--amber-bright)}
+.footer-copy{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;color:rgba(255,255,255,.18)}
 .footer-links{display:flex;gap:2rem;list-style:none}
-.footer-links a{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--gold-mid)}
+.footer-links a{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--amber-bright)}
 .disclaimer{background:var(--forest);padding:.5rem 4rem 1.5rem;border-top:1px solid rgba(255,255,255,.04)}
-.disclaimer p{font-family:var(--mono);font-size:.58rem;color:rgba(255,255,255,.18);line-height:1.65;max-width:960px}
+.disclaimer p{font-family:var(--mono);font-size:.56rem;color:rgba(255,255,255,.16);line-height:1.7;max-width:960px}
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{opacity:0;animation:fadeUp .65s ease forwards}
-.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.32s}.d4{animation-delay:.44s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .7s ease forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}.d4{animation-delay:.46s}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   nav{padding:0 1.5rem}
   .nav-links{display:none}
   .hero,.services-section,.why-section,.clients-section,.contact-section{padding:4rem 1.5rem}
-  .hero{padding-top:5rem}
-  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
-  .hero-card{display:grid;grid-template-columns:1fr 1fr;gap:0}
-  .hc-divider{display:none}
-  .hc-stat{padding:.9rem .5rem}
-  .license-strip{padding:1.25rem 1.5rem;gap:1rem}
-  .services-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
-  .clients-grid{grid-template-columns:1fr}
+  .hero{padding-top:5.5rem}
+  .hero-stat-row{gap:2rem;flex-wrap:wrap}
+  .license-strip{padding:1.2rem 1.5rem;gap:1rem}
+  .services-grid,.why-grid,.clients-grid{grid-template-columns:1fr;gap:2rem}
   .contact-grid{grid-template-columns:1fr;gap:2.5rem}
-  footer{padding:1.5rem;flex-direction:column;align-items:flex-start}
-  .disclaimer{padding:.5rem 1.5rem 1.5rem}
+  footer,.disclaimer{padding-left:1.5rem;padding-right:1.5rem}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV — sparse, high letter-spacing, Jane Street feel -->
 <nav>
   <a href="#" class="nav-brand">
-    <svg width="26" height="26" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-      <rect x="16" y="21" width="2.2" height="8" rx="1" fill="#5D8A72"/>
-      <path d="M17.1 29 Q14 31 12 33" stroke="#5D8A72" stroke-width="1.2" stroke-linecap="round"/>
-      <path d="M17.1 29 Q20 31 22 33" stroke="#5D8A72" stroke-width="1.2" stroke-linecap="round"/>
-      <path d="M17 20 C17 20 8 17 8 10 C8 5.5 12 2 17 4 C22 2 26 5.5 26 10 C26 17 17 20 17 20Z" fill="#2E8B57"/>
-      <path d="M17 20 Q16.2 23 17 24" stroke="#2E8B57" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M17 5 Q17 12 17 20" stroke="rgba(255,255,255,0.25)" stroke-width="0.7"/>
-      <circle cx="17" cy="24" r="1.3" fill="#E5AE4A"/>
+    <!-- Peepal leaf logo — proper geometry, not a circle -->
+    <svg width="28" height="36" viewBox="0 0 28 36" fill="none" aria-hidden="true" style="flex-shrink:0">
+      <!-- True peepal shape: heart base, tapers to long drip tip -->
+      <path d="M14 1 C12 2.5 1 7 1 15 C1 22 6.5 27.5 14 30 C21.5 27.5 27 22 27 15 C27 7 16 2.5 14 1Z" fill="#2E8B57"/>
+      <!-- Gold midrib -->
+      <line x1="14" y1="3" x2="14" y2="30" stroke="#E5AE4A" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- 3 vein pairs -->
+      <line x1="14" y1="9"  x2="6"  y2="14" stroke="rgba(229,174,74,0.55)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="14" y1="9"  x2="22" y2="14" stroke="rgba(229,174,74,0.55)" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="14" y1="16" x2="5"  y2="20" stroke="rgba(229,174,74,0.38)" stroke-width="0.7" stroke-linecap="round"/>
+      <line x1="14" y1="16" x2="23" y2="20" stroke="rgba(229,174,74,0.38)" stroke-width="0.7" stroke-linecap="round"/>
+      <line x1="14" y1="23" x2="8"  y2="26" stroke="rgba(229,174,74,0.22)" stroke-width="0.6" stroke-linecap="round"/>
+      <line x1="14" y1="23" x2="20" y2="26" stroke="rgba(229,174,74,0.22)" stroke-width="0.6" stroke-linecap="round"/>
+      <!-- Drip tip -->
+      <path d="M14 30 C13.5 32 14 34 14 35" stroke="#2E8B57" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <circle cx="14" cy="35" r="1.6" fill="#E5AE4A"/>
     </svg>
     <span class="nav-brand-name">Peepal Tree <span>Advisory</span></span>
   </a>
+  <!-- Sparse nav — 4 items max, wide spacing -->
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Our Edge</a></li>
     <li><a href="#clients">Who We Serve</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Connect With Us</a>
+  <a href="#contact" class="nav-cta">Connect</a>
 </nav>
 
-<!-- ① HERO — dark, identity -->
+<!-- HERO — single bold declarative line, stats row at bottom -->
 <section class="hero" id="home">
   <div class="hero-dots"></div>
-  <div class="hero-glow"></div>
+  <div class="hero-rule"></div>
   <div class="hero-inner">
-    <div>
-      <div class="hero-tag fade-up">Full-Stack Financial Services · India</div>
-      <h1 class="hero-h1 fade-up d1">Where deep roots<br>meet <em>intelligent</em><br>capital.</h1>
-      <p class="hero-sub fade-up d2">India's AI-native, multi-license wealth and credit platform — built for HNIs, families, and institutions who demand more than a brokerage.</p>
-      <div class="hero-actions fade-up d3">
-        <a href="#services" class="btn-gold">Explore Services</a>
-        <a href="#contact" class="btn-outline-light">Schedule a Call</a>
-      </div>
+    <div class="hero-tag fade-up">Wealth · Credit · Research · Execution</div>
+    <!-- One line, declarative, global ambition -->
+    <h1 class="hero-h1 fade-up d1">Intelligent capital.<br><em>Exceptional outcomes.</em></h1>
+    <p class="hero-sub fade-up d2">AI-native. Multi-license. Built for HNIs, families, and institutions who expect more from their wealth platform.</p>
+    <div class="hero-actions fade-up d3">
+      <a href="#services" class="btn-amber">Explore Services</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
     </div>
-    <div class="hero-card fade-up d4">
-      <div class="hc-stat">
-        <div class="hc-num">1,000+</div>
-        <div class="hc-label">HNI Clients</div>
+    <!-- HRT-style stat row — bottom of hero, full width -->
+    <div class="hero-stat-row fade-up d4">
+      <div class="hero-stat">
+        <div class="hs-num">1,000+</div>
+        <div class="hs-label">HNI Clients</div>
       </div>
-      <div class="hc-divider"></div>
-      <div class="hc-stat">
-        <div class="hc-num">₹1,300 Cr</div>
-        <div class="hc-label">Assets in Custody</div>
+      <div class="hero-stat">
+        <div class="hs-num">₹1,300 Cr</div>
+        <div class="hs-label">Assets in Custody</div>
       </div>
-      <div class="hc-divider"></div>
-      <div class="hc-stat">
-        <div class="hc-num">5</div>
-        <div class="hc-label">SEBI / RBI Licenses</div>
+      <div class="hero-stat">
+        <div class="hs-num">5</div>
+        <div class="hs-label">SEBI / RBI Licenses</div>
       </div>
-      <div class="hc-divider"></div>
-      <div class="hc-stat">
-        <div class="hc-num">AI-Native</div>
-        <div class="hc-label">Research &amp; Execution</div>
+      <div class="hero-stat">
+        <div class="hs-num">AI</div>
+        <div class="hs-label">Native Research Engine</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LICENSE STRIP — white, trust signal, functional -->
+<!-- LICENSE STRIP -->
 <div class="license-strip">
   <span class="ls-label">SEBI &amp; RBI Regulated</span>
   <div class="ls-div"></div>
@@ -253,12 +243,12 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
   <span class="ls-badge">NBFC — Lending</span>
 </div>
 
-<!-- ② SERVICES — light, functional ("what do you actually offer?") -->
+<!-- SERVICES — white, no grid lines, white space only -->
 <section id="services" class="services-section">
   <div class="inner">
     <div class="section-tag">What We Do</div>
-    <h2 class="section-h2">Four pillars.<br>One integrated platform.</h2>
-    <p class="section-lead">Each service stands alone. Together, they form a seamless wealth ecosystem — from research to execution to credit.</p>
+    <h2 class="section-h2">Four pillars. One platform.</h2>
+    <p class="section-lead">Each service stands alone. Together they form a seamless wealth ecosystem — from research to execution to credit.</p>
     <div class="services-grid">
       <div class="svc-card">
         <div class="svc-top-bar" style="background:var(--forest-mid)"></div>
@@ -274,7 +264,7 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-top-bar" style="background:var(--gold)"></div>
+        <div class="svc-top-bar" style="background:var(--amber)"></div>
         <div class="svc-num">02</div>
         <div class="svc-name">Portfolio Management</div>
         <div class="svc-lic">SEBI Registered PMS</div>
@@ -291,7 +281,7 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
         <div class="svc-num">03</div>
         <div class="svc-name">Loan Against Securities</div>
         <div class="svc-lic">RBI Regulated NBFC</div>
-        <p class="svc-desc">Unlock liquidity from your portfolio without disrupting your investment thesis. Borrow against equity, MF units, and bonds held in your DP account — fast, digital, and competitively priced.</p>
+        <p class="svc-desc">Unlock liquidity from your portfolio without disrupting your investment thesis. Borrow against equity, MF units, and bonds held in your DP account — fast, digital, competitive.</p>
         <div class="svc-tags">
           <span class="svc-tag">LAS</span>
           <span class="svc-tag">Equity &amp; MF Collateral</span>
@@ -304,7 +294,7 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
         <div class="svc-num">04</div>
         <div class="svc-name">Broking &amp; Execution</div>
         <div class="svc-lic">SEBI Broker · Depository Participant</div>
-        <p class="svc-desc">Full-service broking with the feel of a premium relationship manager and the speed of a digital platform. Equity, derivatives, and IPO access — with dedicated dealer support for every client.</p>
+        <p class="svc-desc">Full-service broking with the feel of a premium relationship manager and the speed of a digital platform. Equity, derivatives, and IPO access — with dedicated dealer support.</p>
         <div class="svc-tags">
           <span class="svc-tag">Equity &amp; F&amp;O</span>
           <span class="svc-tag">IPO Access</span>
@@ -316,13 +306,12 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
   </div>
 </section>
 
-<!-- ③ WHY US — dark, identity/philosophy ("who are you?") -->
+<!-- WHY US — dark -->
 <section id="why" class="why-section">
   <div class="inner">
     <div class="section-tag">Our Edge</div>
     <h2 class="section-h2">Why Peepal Tree?</h2>
-    <p class="section-lead">Three things most financial firms can't say — and we can prove.</p>
-    <div class="why-grid">
+    <div class="why-grid" style="margin-top:3.5rem">
       <div class="why-card">
         <div class="why-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
@@ -342,67 +331,44 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
           <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="why-title">HNI-Grade Service</div>
-        <p class="why-desc">1,000+ high-net-worth clients. ₹1,300 Cr in custody. A relationship model that puts your portfolio manager's number in your pocket — not just a ticket number in a queue.</p>
+        <p class="why-desc">1,000+ high-net-worth clients. ₹1,300 Cr in custody. A relationship model that puts your portfolio manager's number in your pocket — not a ticket number in a queue.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ④ WHO WE SERVE — light, functional ("is this for me?") -->
+<!-- WHO WE SERVE — white -->
 <section id="clients" class="clients-section">
   <div class="inner">
     <div class="section-tag">Who We Serve</div>
     <h2 class="section-h2">Built for serious investors.</h2>
-    <p class="section-lead" style="margin-bottom:2.5rem">From active retail investors to multi-crore family offices — our platform scales with your ambition.</p>
+    <p class="section-lead">From active retail investors to multi-crore family offices — our platform scales with your ambition.</p>
     <div class="clients-grid">
       <div class="client-card retail">
         <div class="client-type">Retail Investors</div>
         <div class="client-name">The Active Investor</div>
-        <p class="client-desc">Equity investors who want regulated research and smart execution without paying full-service brokerage fees. Access model portfolios, AI screening, and IPO allocation through a single account.</p>
+        <p class="client-desc">Equity investors who want regulated research and smart execution without paying full-service brokerage fees. Model portfolios, AI screening, and IPO allocation through a single account.</p>
       </div>
       <div class="client-card hni">
         <div class="client-type">High Net Worth</div>
         <div class="client-name">HNIs &amp; Families</div>
-        <p class="client-desc">Clients with ₹50L+ in investable assets who want a dedicated relationship, discretionary PMS, and the ability to borrow against their portfolio when opportunity calls — all in one place.</p>
+        <p class="client-desc">Clients with ₹50L+ in investable assets who want a dedicated relationship, discretionary PMS, and the ability to borrow against their portfolio when opportunity calls.</p>
       </div>
       <div class="client-card nri">
         <div class="client-type">NRI &amp; Diaspora</div>
         <div class="client-name">Overseas Indians</div>
-        <p class="client-desc">Indians based in the UK, US, UAE, and Singapore who want FEMA-compliant access to India's equity markets with the research depth and execution quality they'd expect from a global platform.</p>
+        <p class="client-desc">Indians in the UK, US, UAE, and Singapore who want FEMA-compliant access to India's equity markets — with the research depth and execution quality of a global platform.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ⑤ CONTACT — dark, personal, committed ("we close on identity") -->
+<!-- CONTACT — dark -->
 <section id="contact" class="contact-section">
   <div class="inner">
     <div class="section-tag">Get In Touch</div>
     <h2 class="section-h2" style="color:#fff">Let's start a conversation.</h2>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p>Whether you're an existing client, a prospective investor, or exploring a partnership — a senior advisor will respond within one business day.</p>
-        <div class="contact-detail">
-          <div class="cd-row">
-            <span class="cd-label">Email</span>
-            <span class="cd-val"><a href="mailto:connect@peepaltree.in">connect@peepaltree.in</a></span>
-          </div>
-          <div class="cd-row">
-            <span class="cd-label">Phone</span>
-            <span class="cd-val">+91 XXXXX XXXXX</span>
-          </div>
-          <div class="cd-row">
-            <span class="cd-label">Based in</span>
-            <span class="cd-val">Mumbai, India</span>
-          </div>
-          <div class="cd-row">
-            <span class="cd-label">Hours</span>
-            <span class="cd-val">Mon–Fri, 9 am – 6 pm IST</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Web3Forms — active, 250 submissions/month free -->
+    <div class="contact-grid" style="grid-template-columns:1fr;max-width:580px">
       <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="d07bf69b-2863-4fb3-ab31-f9bc475f73e7">
         <input type="hidden" name="subject" value="New enquiry — Peepal Tree Advisory">
@@ -455,12 +421,10 @@ footer{background:var(--forest);padding:2rem 4rem;display:flex;align-items:cente
 </div>
 
 <script>
-// ── FORM: Formspree async submit ──
 var form = document.getElementById('contact-form');
 var submitBtn = document.getElementById('submit-btn');
 var successMsg = document.getElementById('form-success');
 var errorMsg = document.getElementById('form-error');
-
 form.addEventListener('submit', function(e) {
   e.preventDefault();
   submitBtn.textContent = 'Sending...';
@@ -475,9 +439,7 @@ form.addEventListener('submit', function(e) {
     if (data.success) {
       form.reset();
       successMsg.style.display = 'block';
-    } else {
-      throw new Error('Failed');
-    }
+    } else { throw new Error('Failed'); }
     submitBtn.textContent = 'Send Message';
     submitBtn.disabled = false;
   }).catch(function() {
@@ -486,11 +448,9 @@ form.addEventListener('submit', function(e) {
     submitBtn.disabled = false;
   });
 });
-
-// ── NAV: active section highlight ──
 var sections = document.querySelectorAll('section[id]');
 var navLinks = document.querySelectorAll('.nav-links a');
-function onScroll() {
+window.addEventListener('scroll', function() {
   var y = window.scrollY + 80;
   sections.forEach(function(s) {
     if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
@@ -499,8 +459,7 @@ function onScroll() {
       });
     }
   });
-}
-window.addEventListener('scroll', onScroll, { passive: true });
+}, { passive: true });
 </script>
 </body>
 </html>

@@ -1,9 +1,12 @@
 # Peepal Tree Advisory — Project Bible
-**Last updated:** May 2026 — v1.1  
+**Last updated:** May 2026 — v1.3  
 **Purpose:** Single source of truth for all Claude sessions. Paste this at the start of any new session before requesting edits or additions.
 
 ### Changelog
-- v1.1: CNAME file removed (not needed on Vercel). Next.js deferred — not needed for MVP. Netlify dropped in favour of Vercel. GitHub username confirmed: `parshantstack`. Repo: `peepal-tree`.
+- v1.0: Initial bible created
+- v1.1: CNAME file removed. Next.js deferred. Netlify dropped in favour of Vercel. GitHub username confirmed: `parshantstack`. Repo: `peepal-tree`.
+- v1.2: Site live at `https://peepal-tree.vercel.app`. Web3Forms contact form activated. Primary email `parshant.aiops@gmail.com`, CC `el.shankaro@googlemail.com`. PowerShell note added (use `;` not `&&`).
+- v1.3: Full "Indian Precision" redesign applied. Key changes: hero rebuilt with single bold H1 ("Intelligent capital. Exceptional outcomes."), stats moved to bottom row (HRT style). Pure white + pure forest green backgrounds only — bg2 (#F2F4F0) removed. Service card grid lines removed, white space only. Nav letter-spacing increased, CTA shortened to "Connect". Gold replaced with cooler amber (#C8A96E). Logo rebuilt with correct peepal leaf geometry. Overclaiming subheading removed from Why Us. Contact section left column (placeholder details) removed — form is full width. Geographic anchoring removed from hero copy. "Schedule a Call" changed to "Get in Touch".
 
 ---
 
@@ -13,8 +16,8 @@
 |---|---|
 | **Legal Name** | Peepal Tree Advisory Pvt. Ltd. |
 | **Type** | Full-stack Indian financial services firm |
-| **Positioning** | India's AI-native, multi-license wealth and credit platform |
-| **Tagline** | *Where deep roots meet intelligent capital.* |
+| **Positioning** | AI-native, multi-license wealth and credit platform |
+| **Tagline** | *Intelligent capital. Exceptional outcomes.* |
 | **Stage** | Operational — MVP website live, domain pending |
 | **Location** | Mumbai, India |
 | **Founded** | Active as of May 2026 |
@@ -92,18 +95,17 @@ Do not surface these on the website until instructed:
 
 ### Colour Palette
 ```
---forest:       #0D3322   (primary dark green — dominant brand colour)
---forest-mid:   #1A5C3E   (hover states, secondary dark)
---forest-light: #2E8B57   (accents)
---leaf:         #3DAA6F   (section tags, highlights)
---leaf-pale:    #E8F5EE   (light tints, hover backgrounds)
---gold:         #C9922A   (CTA buttons, accents)
---gold-mid:     #E5AE4A   (hero numbers, nav CTA, links on dark)
---ink:          #111827   (body text)
---slate:        #4B5563   (secondary text)
---muted:        #9CA3AF   (labels, placeholders)
---bg:           #F9FAF8   (light section background)
---bg2:          #F2F4F0   (alternate light background)
+--forest:      #0D3322   (primary dark green — dominant brand colour)
+--forest-mid:  #1A5C3E   (hover states, secondary dark)
+--leaf:        #3DAA6F   (section tags, license badges)
+--leaf-pale:   #E8F5EE   (service tag backgrounds)
+--amber:       #C8A96E   (cooler accent — replaces old gold, used throughout)
+--amber-bright:#E5AE4A   (hero numbers, nav CTA, links on dark only)
+--ink:         #111827   (body text)
+--slate:       #4B5563   (secondary text, descriptions)
+--muted:       #9CA3AF   (labels, placeholders)
+--bg:          #FFFFFF   (pure white — only light background used)
+NOTE: --bg2 (#F2F4F0) removed entirely. Only pure white and pure forest green.
 ```
 
 ### Typography
@@ -138,15 +140,20 @@ The page alternates dark/light with *intentional meaning*, not decoration:
 
 | # | Section | Background | Semantic purpose |
 |---|---|---|---|
-| 1 | Hero | Dark (forest) | Identity — who we are |
+| 1 | Hero | Dark (forest) | Identity — bold declarative statement, stats row at bottom |
 | — | License Strip | White | Trust signal — regulatory proof |
-| 2 | Services | Light (bg) | Functional — what we offer |
-| 3 | Why Us | Dark (forest) | Philosophy — why we're different |
-| 4 | Who We Serve | Light (bg2) | Functional — self-qualification |
-| 5 | Contact | Dark (forest) | Personal, committed — close on identity |
+| 2 | Services | White | Functional — what we offer, no grid lines, white space only |
+| 3 | Why Us | Dark (forest) | Edge — three differentiators, no subheading claim |
+| 4 | Who We Serve | White | Functional — self-qualification |
+| 5 | Contact | Dark (forest) | Action — full-width form only, no placeholder details |
 | — | Footer + Disclaimer | Dark (forest) | Continuous with contact |
 
-**Rule:** Dark sections = identity/philosophy. Light sections = functional/informational. Do not break this rhythm without good reason.
+**Rules:**
+- Dark sections = identity/philosophy/action
+- White sections = functional/informational
+- No mid-grey backgrounds ever
+- No visible grid lines between cards — white space only
+- Contact section: form is full width, no contact details until domain/phone are real
 
 ---
 
@@ -189,13 +196,13 @@ Logo (left) | Services · Our Edge · Who We Serve · Contact (centre) | Connect
 
 ## 10. Deployment Setup
 
-### GitHub → Vercel Pipeline
+### GitHub → Vercel pipeline
 ```
-Edit code locally
+Edit index.html in VS Code
     ↓
-git add . && git commit -m "description of change"
-    ↓
-git push origin main
+git add .
+git commit -m "describe what changed"
+git push
     ↓
 Vercel auto-deploys in ~30 seconds
     ↓
@@ -203,18 +210,26 @@ Live at: https://peepal-tree.vercel.app
          (later: https://peepaltree.in)
 ```
 
+### PowerShell note (important)
+VS Code terminal runs PowerShell on Windows. Use `;` not `&&` to chain commands:
+```powershell
+git add . ; git commit -m "your message" ; git push
+```
+`&&` throws a parser error in PowerShell — use `;` or run commands one per line.
+
 ### GitHub repo (confirmed)
 ```
 https://github.com/parshantstack/peepal-tree
 ```
 
-### Git add tip
-Use `git add .` to stage all files at once — no need to list filenames individually.
-Only be careful if the folder has unrelated files. Best practice: keep all site files in a dedicated folder `C:\Users\sheor\Projects\peepal-tree\`.
-
-### Current live URL
+### Live URL (confirmed)
 ```
-https://peepal-tree.vercel.app   (update once Vercel deployment confirmed)
+https://peepal-tree.vercel.app
+```
+
+### Future URL (when domain ready)
+```
+https://peepaltree.in
 ```
 
 ### Domain setup (when ready)
@@ -227,27 +242,20 @@ https://peepal-tree.vercel.app   (update once Vercel deployment confirmed)
 
 ---
 
-## 11. Form Setup (Action Required)
+## 11. Form Setup — ACTIVE ✓
 
-The contact form currently has a placeholder ID. To activate:
+Contact form is live via Web3Forms.
 
-**Option A — Formspree (current code)**
-1. Sign up at formspree.io (free, 50 submissions/month)
-2. Create new form → copy endpoint ID
-3. In `index.html`, replace `YOUR_FORMSPREE_ID` with actual ID
-4. Form submissions email to your inbox
+| Field | Value |
+|---|---|
+| Provider | Web3Forms (free, 250 submissions/month) |
+| Access key | `d07bf69b-2863-4fb3-ab31-f9bc475f73e7` |
+| Primary email | `parshant.aiops@gmail.com` (registered account) |
+| CC email | `el.shankaro@googlemail.com` (Uma) |
+| Subject line | "New enquiry — Peepal Tree Advisory" |
+| From name | "Peepal Tree Website" |
 
-**Option B — Web3Forms (recommended upgrade)**
-1. Sign up at web3forms.com (free, 250 submissions/month)
-2. Get access key
-3. Change form action to `https://api.web3forms.com/submit`
-4. Add `<input type="hidden" name="access_key" value="YOUR_KEY">`
-5. No JS needed — works as plain HTML POST
-
-**Option C — Netlify Forms (if switching to Netlify)**
-1. Add `data-netlify="true"` to `<form>` tag
-2. Add `<input type="hidden" name="form-name" value="contact">`
-3. Remove Formspree action and JS fetch entirely
+No changes needed unless switching provider or adding more recipients.
 
 ---
 
@@ -290,22 +298,23 @@ The contact form currently has a placeholder ID. To activate:
 
 ## 14. Pending Actions Checklist
 
-- [x] MVP `index.html` built and downloaded
+- [x] MVP `index.html` built
 - [x] Project bible created
-- [x] GitHub repo created → `github.com/parshantstack/peepal-tree`
-- [x] Hosting decision made → Vercel (not Netlify)
-- [x] Next.js deferred — not needed for MVP
-- [x] CNAME file dropped — not needed on Vercel
-- [ ] Move files to dedicated folder `C:\Users\sheor\Projects\peepal-tree\`
-- [ ] Run git commands to push `index.html` and bible to GitHub
-- [ ] Connect GitHub repo to Vercel → get `.vercel.app` live URL
-- [ ] Activate contact form — replace `YOUR_FORMSPREE_ID` (or switch to Web3Forms)
+- [x] GitHub repo → `github.com/parshantstack/peepal-tree`
+- [x] Vercel connected → `https://peepal-tree.vercel.app`
+- [x] Web3Forms contact form activated
+- [x] CC email added (el.shankaro@googlemail.com)
+- [x] Indian Precision redesign applied (v1.3)
+- [x] Logo rebuilt with correct peepal leaf geometry
+- [x] Hero copy finalised — no geographic anchoring
+- [x] Contact section cleaned — form full width, no placeholders
+- [ ] Add real phone number (update contact section when ready)
 - [ ] Buy domain `peepaltree.in` (Namecheap or BigRock)
 - [ ] Connect domain to Vercel via nameservers
 - [ ] Set up `connect@peepaltree.in` via Cloudflare Email Routing
-- [ ] Add real phone number to contact section in `index.html`
-- [ ] Add favicon (peepal leaf — 32×32 SVG/PNG)
+- [ ] Add favicon (peepal leaf — 32×32)
 - [ ] Legal review of disclaimer text
+- [ ] Push bible v1.3 to GitHub repo
 
 ---
 
