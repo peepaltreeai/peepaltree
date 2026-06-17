@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Peepal Tree Investments — Growing Wealth Sustainably</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest:  #3A5A2A;
+    --forest-mid: #4E7A3A;
+    --leaf:    #6B9E4E;
+    --leaf-pale: #EEF5E8;
+    --gold:    #8B7335;
+    --gold-light: #B09A52;
+    --ink:     #111210;
+    --ink-soft: #2A2C28;
+    --muted:   #5E6358;
+    --surface: #F8F9F4;
+    --white:   #FFFFFF;
+    --border:  rgba(74,110,54,0.15);
+    --border-mid: rgba(74,110,54,0.28);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 6vw;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 0.5px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 28px rgba(0,0,0,0.07); }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+  }
+  .nav-logo-tree {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+  .nav-logo-text {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .nav-logo-text span { display: block; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--leaf); font-family: var(--sans); font-weight: 400; margin-top: 1px; }
+
+  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-cta { color: var(--forest) !important; border: 0.5px solid var(--forest) !important; padding: 0.45rem 1.1rem; border-radius: 2px; transition: background 0.2s, color 0.2s !important; }
+  .nav-cta:hover { background: var(--forest) !important; color: var(--white) !important; }
+
+  /* GLOBAL */
+  section { padding: 5.5rem 6vw; }
+  .eyebrow { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--leaf); margin-bottom: 0.85rem; display: block; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+  h2 { font-size: clamp(2rem, 3.2vw, 3rem); color: var(--ink); }
+  h3 { font-size: 1.45rem; color: var(--ink); }
+  p { color: var(--muted); line-height: 1.8; }
+  .green-line { display: block; width: 36px; height: 1.5px; background: var(--leaf); margin: 1.25rem 0; }
+
+  /* BTN */
+  .btn-primary {
+    display: inline-block; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; color: var(--white);
+    background: var(--forest); padding: 0.8rem 2rem; border: 1px solid var(--forest);
+    border-radius: 2px; transition: background 0.2s, border-color 0.2s; margin-right: 0.75rem;
+  }
+  .btn-primary:hover { background: var(--forest-mid); border-color: var(--forest-mid); }
+  .btn-outline {
+    display: inline-block; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; color: var(--ink);
+    padding: 0.8rem 2rem; border: 0.5px solid var(--ink-soft); border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--white); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding-top: 7rem; position: relative; overflow: hidden; background: var(--white);
+  }
+  .hero-bg {
+    position: absolute; top: 0; right: 0; width: 48%; height: 100%;
+    background: var(--leaf-pale);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+  .hero-leaf-pattern {
+    position: absolute; top: 0; right: 0; width: 48%; height: 100%;
+    z-index: 1; opacity: 0.04;
+    background-image: radial-gradient(circle at 30% 40%, var(--forest) 1px, transparent 1px),
+      radial-gradient(circle at 70% 60%, var(--forest) 1px, transparent 1px),
+      radial-gradient(circle at 50% 80%, var(--forest) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 660px; }
+  .hero-content h1 {
+    font-size: clamp(3rem, 5.2vw, 4.8rem); letter-spacing: -0.01em;
+    color: var(--ink); margin-bottom: 1.25rem;
+  }
+  .hero-content h1 em { font-style: italic; color: var(--forest); }
+  .hero-content p { font-size: 1.02rem; max-width: 500px; margin-bottom: 2.25rem; }
+  .hero-tagline {
+    font-family: var(--serif); font-size: 1.2rem; font-style: italic;
+    color: var(--forest-mid); margin-bottom: 2rem; letter-spacing: 0.01em;
+  }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 3.5rem;
+    padding-top: 2rem; border-top: 0.5px solid var(--border); flex-wrap: wrap;
+  }
+  .hero-stat-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--ink); display: block; }
+  .hero-stat-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+  /* BODHI TREE SVG (decorative, right side) */
+  .hero-tree-wrap {
+    position: absolute; right: 6vw; top: 50%; transform: translateY(-50%);
+    z-index: 2; opacity: 0.22; pointer-events: none;
+  }
+
+  /* PURPOSE / INTRO */
+  #purpose { background: var(--ink); }
+  #purpose .eyebrow { color: var(--leaf); }
+  #purpose h2 { color: var(--white); font-style: italic; font-size: clamp(1.8rem, 3vw, 2.8rem); }
+  #purpose p { color: rgba(255,255,255,0.58); }
+  #purpose .green-line { background: var(--leaf); }
+
+  .purpose-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .pillar {
+    padding: 1.5rem; border: 0.5px solid rgba(255,255,255,0.09);
+    border-radius: 2px; transition: border-color 0.3s;
+  }
+  .pillar:hover { border-color: var(--leaf); }
+  .pillar-glyph { font-family: var(--serif); font-size: 1.8rem; color: var(--leaf); display: block; margin-bottom: 0.6rem; }
+  .pillar h4 { font-family: var(--sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.3rem; }
+  .pillar p { font-size: 0.84rem; color: rgba(255,255,255,0.46); }
+
+  /* PROBLEM WE SOLVE */
+  #problem { background: var(--surface); }
+  .problem-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4.5rem; align-items: start; }
+  .problem-quote {
+    font-family: var(--serif); font-size: 1.3rem; font-weight: 400; font-style: italic;
+    color: var(--ink); line-height: 1.5; padding: 2rem 2rem 2rem 1.75rem;
+    border-left: 2px solid var(--forest); background: var(--white);
+    border-radius: 0 2px 2px 0; margin-top: 2rem;
+  }
+  .problem-points { list-style: none; margin-top: 1.5rem; }
+  .problem-points li {
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    font-size: 0.9rem; color: var(--muted); padding: 0.65rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .problem-points li:last-child { border-bottom: none; }
+  .problem-points li::before { content: "→"; color: var(--forest); flex-shrink: 0; margin-top: 0.05rem; }
+
+  /* WHAT WE DO */
+  #services { background: var(--white); }
+  .services-intro { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3.5rem; margin-bottom: 3.5rem; align-items: end; }
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); }
+  .service-card {
+    background: var(--white); padding: 2.75rem 2.25rem;
+    position: relative; overflow: hidden; transition: background 0.3s;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    height: 2px; width: 0; background: var(--forest); transition: width 0.4s ease;
+  }
+  .service-card:hover::after { width: 100%; }
+  .service-card:hover { background: var(--leaf-pale); }
+  .service-num { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: var(--border-mid); line-height: 1; margin-bottom: 1.25rem; }
+  .service-card h3 { margin-bottom: 0.85rem; }
+  .service-card p { font-size: 0.9rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+  .tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); border: 0.5px solid var(--border-mid); padding: 0.22rem 0.55rem; border-radius: 1px; }
+
+  /* OFFERINGS */
+  #offerings { background: var(--surface); }
+  .offerings-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3.5rem; margin-bottom: 3.5rem; align-items: end; }
+
+  .plan-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .plan-card {
+    background: var(--white); border: 0.5px solid var(--border);
+    border-radius: 3px; padding: 2.5rem 1.75rem; position: relative; transition: box-shadow 0.3s;
+  }
+  .plan-card:hover { box-shadow: 0 4px 24px rgba(58,90,42,0.1); }
+  .plan-card.featured { border: 1.5px solid var(--forest); }
+  .plan-badge {
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    background: var(--forest); color: var(--white); padding: 0.25rem 0.9rem; border-radius: 0 0 3px 3px;
+    white-space: nowrap;
+  }
+  .plan-tier { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1rem; }
+  .plan-tier.platinum { color: var(--forest); }
+  .plan-tier.gold { color: var(--gold); }
+  .plan-tier.silver { color: var(--muted); }
+  .plan-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .plan-card .fee { font-family: var(--serif); font-size: 1.6rem; color: var(--forest); display: block; margin: 0.5rem 0 0.25rem; }
+  .plan-card .fee-note { font-size: 0.75rem; color: var(--muted); margin-bottom: 1.25rem; }
+  .plan-divider { height: 0.5px; background: var(--border); margin: 1.25rem 0; }
+  .plan-features { list-style: none; }
+  .plan-features li { font-size: 0.84rem; color: var(--muted); padding: 0.35rem 0; display: flex; gap: 0.6rem; align-items: flex-start; }
+  .plan-features li::before { content: "—"; color: var(--leaf); flex-shrink: 0; }
+  .women-note { font-size: 0.72rem; color: var(--leaf); font-style: italic; margin-top: 0.75rem; }
+
+  /* APPROACH */
+  #approach { background: var(--ink); }
+  #approach .eyebrow { color: var(--leaf); }
+  #approach h2 { color: var(--white); }
+  #approach p { color: rgba(255,255,255,0.55); }
+  #approach .green-line { background: var(--leaf); }
+
+  .approach-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 3rem; position: relative; }
+  .approach-steps::before {
+    content: ''; position: absolute; top: 22px; left: 10%; right: 10%;
+    height: 1px; background: rgba(255,255,255,0.1); z-index: 0;
+  }
+  .step { text-align: center; padding: 0 0.75rem; position: relative; z-index: 1; }
+  .step-num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--forest); color: var(--white);
+    font-family: var(--serif); font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  .step h4 { font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; }
+  .step p { font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.6; }
+
+  /* WHY DIFFERENT */
+  #why { background: var(--leaf-pale); }
+  .why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .why-col h3 { margin-bottom: 1.5rem; }
+  .why-list { list-style: none; }
+  .why-list li {
+    padding: 1rem 0; border-bottom: 0.5px solid var(--border);
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .why-list li:last-child { border-bottom: none; }
+  .why-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--forest); border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 1.1rem; color: var(--white);
+  }
+  .why-list strong { display: block; font-size: 0.88rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+  .why-list span { font-size: 0.82rem; color: var(--muted); }
+
+  .promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .promise-card {
+    background: var(--white); border: 0.5px solid var(--border);
+    padding: 1.25rem 1.5rem; border-radius: 2px; border-top: 2px solid var(--forest);
+  }
+  .promise-card .need { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+  .promise-card .offer { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+
+  /* TEAM */
+  #team { background: var(--white); }
+  .team-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .team-intro p { margin-bottom: 1rem; }
+  .team-values { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .value-tag {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--forest); border: 0.5px solid var(--border-mid);
+    padding: 0.35rem 0.85rem; border-radius: 1px; background: var(--leaf-pale);
+  }
+  .team-members { display: flex; flex-direction: column; gap: 1rem; }
+  .team-member {
+    background: var(--surface); border: 0.5px solid var(--border);
+    padding: 1.25rem 1.5rem; border-radius: 2px;
+    display: flex; align-items: center; gap: 1.25rem;
+    transition: border-color 0.2s;
+  }
+  .team-member:hover { border-color: var(--forest); }
+  .member-avatar {
+    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+    background: var(--forest); display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 500;
+  }
+  .member-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+  .member-firms { font-size: 0.78rem; color: var(--muted); }
+
+  .culture-quote {
+    margin-top: 3.5rem; padding: 2.5rem; background: var(--leaf-pale);
+    border-left: 2px solid var(--forest); border-radius: 0 3px 3px 0;
+  }
+  .culture-quote p { font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--ink); line-height: 1.6; }
+  .culture-quote cite { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--leaf); margin-top: 0.75rem; display: block; }
+
+  /* RETURNS CALCULATOR */
+  #returns { background: var(--surface); }
+  .returns-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .scenario-table { width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.85rem; }
+  .scenario-table th { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1.5px solid var(--border-mid); }
+  .scenario-table td { padding: 0.7rem 0.9rem; color: var(--muted); border-bottom: 0.5px solid var(--border); }
+  .scenario-table tr:last-child td { border-bottom: none; }
+  .scenario-table .highlight { color: var(--forest); font-weight: 500; }
+  .scenario-table thead th:first-child { color: var(--ink); }
+  .chart-area { background: var(--white); border: 0.5px solid var(--border); padding: 1.5rem; border-radius: 2px; }
+  .chart-bars { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.5rem; }
+  .chart-row { display: flex; align-items: center; gap: 0.75rem; }
+  .chart-label { font-size: 0.7rem; color: var(--muted); width: 72px; flex-shrink: 0; }
+  .chart-bg { flex: 1; height: 8px; background: var(--leaf-pale); border-radius: 4px; overflow: hidden; }
+  .chart-fill { height: 100%; border-radius: 4px; background: var(--forest); transform-origin: left; animation: growBar 1.1s ease forwards; }
+  .chart-val { font-size: 0.72rem; color: var(--forest); font-weight: 500; width: 36px; text-align: right; flex-shrink: 0; }
+  @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .returns-note { font-size: 0.72rem; color: rgba(0,0,0,0.3); margin-top: 1rem; font-style: italic; }
+
+  /* CONTACT */
+  #contact { background: var(--ink); text-align: center; }
+  #contact .eyebrow { color: var(--leaf); }
+  #contact h2 { color: var(--white); font-size: clamp(2.2rem, 3.5vw, 3.5rem); max-width: 640px; margin: 0 auto; }
+  #contact .green-line { margin: 1.5rem auto; }
+  #contact > p { color: rgba(255,255,255,0.48); max-width: 500px; margin: 0 auto 2.5rem; }
+  .contact-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-forest {
+    display: inline-block; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; color: var(--white);
+    background: var(--forest); padding: 0.85rem 2rem; border: 1px solid var(--forest);
+    border-radius: 2px; transition: background 0.2s;
+  }
+  .btn-forest:hover { background: var(--forest-mid); }
+  .btn-ghost {
+    display: inline-block; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,0.65);
+    padding: 0.85rem 2rem; border: 0.5px solid rgba(255,255,255,0.2);
+    border-radius: 2px; transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--leaf); color: var(--leaf); }
+  .contact-detail {
+    display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+    margin-top: 3.5rem; padding-top: 3rem; border-top: 0.5px solid rgba(255,255,255,0.1);
+  }
+  .contact-item .label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-bottom: 0.35rem; }
+  .contact-item .value { font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+
+  /* CONTACT FORM */
+  .contact-form-wrap { max-width: 760px; margin: 0 auto; text-align: left; }
+  .form-row { margin-bottom: 1.1rem; }
+  .form-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.38); display: block; margin-bottom: 0.5rem; }
+  .form-input {
+    width: 100%; background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.14);
+    color: var(--white); font-family: var(--sans); font-size: 0.92rem; font-weight: 300;
+    padding: 0.75rem 1rem; outline: none; border-radius: 2px; transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-input:focus { border-color: var(--leaf); }
+  .form-input::placeholder { color: rgba(255,255,255,0.22); }
+  .form-input option { background: var(--ink); color: var(--white); }
+  textarea.form-input { resize: vertical; min-height: 110px; }
+  .form-submit {
+    font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--white); background: var(--forest); border: 1px solid var(--forest);
+    padding: 0.85rem 2.2rem; border-radius: 2px; cursor: pointer; transition: background 0.2s;
+    font-family: var(--sans);
+  }
+  .form-submit:hover { background: var(--forest-mid); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-msg { display: none; font-size: 0.82rem; margin-top: 1rem; }
+  .form-msg.success { color: var(--leaf); }
+  .form-msg.error { color: #D88; }
+
+  /* FOOTER */
+  footer {
+    background: #0A0C09; padding: 2.25rem 6vw;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem; font-size: 0.7rem; color: rgba(255,255,255,0.28);
+    letter-spacing: 0.05em;
+  }
+  .footer-logo { display: flex; align-items: center; gap: 0.5rem; }
+  .footer-logo-text { font-family: var(--serif); font-size: 1.1rem; color: rgba(255,255,255,0.45); }
+  .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,0.28); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--leaf); }
+
+  .disclaimer {
+    background: #060806; padding: 1.5rem 6vw;
+    font-size: 0.67rem; color: rgba(255,255,255,0.2); line-height: 1.65;
+  }
+
+
+  /* PLATFORM */
+  #platform { background: var(--ink); color: var(--white); }
+  #platform h2 { color: var(--white); }
+  #platform p { color: rgba(255,255,255,0.62); }
+  #platform .eyebrow { color: var(--leaf); }
+  #platform .gold-line { background: var(--leaf); }
+
+  .platform-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .feature-list {
+    list-style: none;
+    margin-top: 2rem;
+  }
+  .feature-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feat-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--forest);
+    margin-top: 0.55rem;
+    flex-shrink: 0;
+  }
+  .feat-text strong {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+  .feat-text span { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+
+  .platform-visual {
+    background: rgba(255,255,255,0.04);
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+  .pv-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .pv-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); width: 80px; flex-shrink: 0; }
+  .pv-bar-bg {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .pv-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--forest), var(--leaf));
+    border-radius: 3px;
+    transform-origin: left;
+    animation: growBar 1.2s ease forwards;
+  }
+  @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .pv-val { font-size: 0.75rem; color: var(--leaf); width: 36px; text-align: right; flex-shrink: 0; }
+
+  .plan-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    margin-top: 3rem;
+  }
+  .plan-card {
+    background: var(--ink);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .plan-card.featured { background: rgba(184,151,58,0.1); border: 0.5px solid var(--forest); }
+  .plan-name {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 0.75rem;
+  }
+  .plan-card.featured .plan-name { color: var(--leaf); }
+  .plan-price {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--white);
+    display: block;
+  }
+  .plan-price sup { font-size: 1rem; vertical-align: super; }
+  .plan-per { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+  .plan-features {
+    list-style: none;
+    margin-top: 1.25rem;
+    text-align: left;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+  }
+  .plan-features li { padding: 0.3rem 0; }
+  .plan-features li::before { content: "— "; color: var(--forest); }
+
+  
+  /* RESEARCH */
+  #research { background: var(--surface); }
+  .research-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .research-card {
+    border-top: 2px solid var(--forest);
+    padding-top: 1.5rem;
+  }
+  .research-tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .research-card h4 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .research-card p { font-size: 0.85rem; }
+
+  
+  /* INVEST */
+  #invest { background: var(--white); }
+  .invest-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 3rem;
+  }
+  .invest-tab {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -0.5px;
+    transition: color 0.2s, border-color 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .invest-tab.active { color: var(--forest); border-bottom-color: var(--forest); }
+
+  .invest-panel { display: none; }
+  .invest-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+  .invest-detail h3 { margin-bottom: 1rem; }
+  .invest-detail p { margin-bottom: 1.5rem; }
+
+  .invest-points {
+    list-style: none;
+    margin-top: 1.5rem;
+  }
+  .invest-points li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding: 0.5rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .invest-points li:last-child { border-bottom: none; }
+  .invest-points li::before { content: "→"; color: var(--forest); flex-shrink: 0; }
+
+  .invest-highlight {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 2px;
+    border-left: 2px solid var(--forest);
+  }
+  .invest-highlight .stat {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--forest);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .invest-highlight .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  
+
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-bg, .hero-tree-wrap { opacity: 0.15; }
+    .purpose-layout, .problem-layout, .services-intro, .offerings-intro,
+    .why-layout, .team-layout, .returns-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .services-grid, .plan-grid, .approach-steps, .promise-grid, .form-row-grid { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <img src="/images/PeepalTreeLogo.png" class="nav-logo-tree" alt="Peepal Tree" />
+    <div class="nav-logo-text">
+      Peepal Tree
+      <span>Investments LLP</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#services">Our Offerings</a></li>
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#invest">Invest</a></li>
+    <li><a href="#approach">Our Journey</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#returns">Returns</a></li>
+    <li><a href="#contact" class="nav-cta">Connect With Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-leaf-pattern"></div>
+  <div class="hero-content fade-up">
+    <span class="eyebrow">Peepal Tree</span>
+    <h1>Investing in<br />the <em>future.</em></h1>
+    <div class="hero-tagline">"Growing Wealth Sustainably"</div>
+    <p>High-end investment management — combining the power of proven options strategies, AI-powered algo trading, and institutional expertise — made accessible to serious high-income investors, not just the ultra-rich.</p>
+    <a href="#problem" class="btn-outline">Our Purpose</a>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">20<sup style="font-size:1.3rem">+</sup></span>
+        <span class="hero-stat-label">Years avg. experience</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">5</span>
+        <span class="hero-stat-label">Founding partners</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">4</span>
+        <span class="hero-stat-label">Countries of pedigree</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">₹100cr</span>
+        <span class="hero-stat-label">AUM aspiration by 2030</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-tree-wrap">
+    <img src="/images/PeepalTreeLogo.png" style="width:300px;height:300px;object-fit:contain;" alt="" />
+  </div>
+</section>
+
+<!-- PURPOSE -->
+<section id="purpose">
+  <div class="purpose-layout">
+    <div class="fade-up">
+      <span class="eyebrow">Our Purpose</span>
+      <h2>"Growing Wealth<br />Sustainably"</h2>
+      <span class="green-line"></span>
+      <p>The Peepal tree — also known as the Bodhi tree — is a symbol of prosperity, knowledge, and longevity across centuries. Like the tree itself, we are rooted in patience and discipline, focused on long-term, sustainable growth rather than short-term speculation.</p>
+      <p style="margin-top:1rem;">We believe capital not invested wisely is wasted potential. We are here to change that — with technology, financial wisdom, and an uncompromising ethical approach to investment management.</p>
+    </div>
+    <div class="pillars fade-up">
+      <div class="pillar">
+        <span class="pillar-glyph">⊕</span>
+        <h4>Protect Capital</h4>
+        <p>We do not undertake high-risk strategies. Capital preservation is the foundation of every decision.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-glyph">⟳</span>
+        <h4>Grow Capital</h4>
+        <p>Proven options strategies combined with systematic investing for sustainable above-index returns.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-glyph">◈</span>
+        <h4>Skin in the Game</h4>
+        <p>Partnership model — we invest our own capital alongside yours. Profits are shared. Interests are aligned.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-glyph">◉</span>
+        <h4>Peace of Mind</h4>
+        <p>Full transparency, proactive updates, no hidden charges. You are a partner, not a number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="problem-layout">
+    <div class="fade-up">
+      <span class="eyebrow">The Problem We Solve</span>
+      <h2>Your capital deserves better.</h2>
+      <span class="green-line"></span>
+      <div class="problem-quote">
+        "Very Busy High-Income individuals do not have the opportunity to invest their capital in professionally managed, high-end investing methods — and so do not benefit from high returns, leaving them less financially secure in the long run."
+      </div>
+    </div>
+    <div class="fade-up">
+      <p style="margin-bottom:1.5rem;">You've worked hard. You earn well. But you're too busy to actively manage your investments — and the financial industry hasn't made it easy:</p>
+      <ul class="problem-points">
+        <li>Most financial firms design products for their commission, not your returns.</li>
+        <li>High-end investment methods have historically been reserved only for UHNI/VHNI clients.</li>
+        <li>FinInfluencers on social media provide recommendations for their own benefit, not yours.</li>
+        <li>Banks lack transparency — even their relationship managers are often less informed than they should be.</li>
+        <li>You're left choosing between passive investing, trusting the wrong people, or doing nothing at all.</li>
+        <li>Capital not invested wisely is an inefficiency — and a financial loss you pay silently every year.</li>
+      </ul>
+      <div style="margin-top:2rem; padding:1.25rem 1.5rem; background:var(--white); border:0.5px solid var(--border); border-left:2px solid var(--forest); border-radius:0 2px 2px 0; font-size:0.88rem; color:var(--muted);">
+        We proactively advise every partner to first ensure sufficient liquidity for day-to-day needs before investing with us.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section id="services">
+  <div class="services-intro">
+    <div class="fade-up">
+      <span class="eyebrow">Our Offerings</span>
+      <h2>How we create value</h2>
+      <span class="green-line"></span>
+    </div>
+    <p class="fade-up" style="padding-top:0.25rem;">We combine the proven power of long-term equity investing with the return-enhancing potential of options strategies — powered by AI and technology. The result: sustainable, above-market returns at manageable risk and low cost.</p>
+  </div>
+  <div class="services-grid fade-up">
+
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Options-Powered Algo Trading</h3>
+      <p>Our core strategy: combining systematic equity investing with disciplined options trading. We use AI-powered algorithms to execute proven derivative strategies — generating sustainable higher returns at calculated, manageable risk.</p>
+      <div class="service-tags">
+        <span class="tag">Options Trading</span>
+        <span class="tag">Algo / Quant</span>
+        <span class="tag">Derivatives</span>
+        <span class="tag">Risk-Controlled</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>AI-Powered Trading Platform</h3>
+      <p>Our proprietary cloud-native, AI-augmented trading platform — built in-house by engineers from Microsoft, Goldman Sachs, and Infosys — is available to external traders via a freemium model. Institutional tools, accessible to all.</p>
+      <div class="service-tags">
+        <span class="tag">Cloud-Native</span>
+        <span class="tag">AI / ML</span>
+        <span class="tag">Strategy Builder</span>
+        <span class="tag">Freemium</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Market Research &amp; Intelligence</h3>
+      <p>Deep-dive research distilling macroeconomic trends, sector developments, and global events into actionable insights. Designed for investors who want an informed edge without spending hours chasing information.</p>
+      <div class="service-tags">
+        <span class="tag">Macro Research</span>
+        <span class="tag">Sector Analysis</span>
+        <span class="tag">Global Markets</span>
+        <span class="tag">Data-Driven</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Managed Portfolios &amp; Funds</h3>
+      <p>Expert-curated Smallcases, SEBI-regulated Portfolio Management Services (PMS), and Alternative Investment Fund (AIF) structures — offering structured, professionally managed pathways to superior risk-adjusted long-term returns.</p>
+      <div class="service-tags">
+        <span class="tag">Smallcase</span>
+        <span class="tag">PMS</span>
+        <span class="tag">AIF</span>
+        <span class="tag">Portfolio Mgmt</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PLATFORM -->
+<section id="platform">
+  <div class="platform-layout">
+    <div class="fade-up">
+      <span class="eyebrow">Technology</span>
+      <h2>Our trading platform</h2>
+      <span class="gold-line"></span>
+      <p>Built from scratch by engineers who have seen — and built — systems at the world's largest financial and technology institutions. Our platform brings institutional-grade infrastructure to every trader.</p>
+      <ul class="feature-list">
+        <li>
+          <div class="feat-dot"></div>
+          <div class="feat-text">
+            <strong>AI Signal Engine</strong>
+            <span>Machine learning models trained on decades of market data to identify high-probability setups.</span>
+          </div>
+        </li>
+        <li>
+          <div class="feat-dot"></div>
+          <div class="feat-text">
+            <strong>Cloud-Native Infrastructure</strong>
+            <span>Auto-scaling, low-latency execution with institutional-grade uptime and reliability.</span>
+          </div>
+        </li>
+        <li>
+          <div class="feat-dot"></div>
+          <div class="feat-text">
+            <strong>Strategy Builder &amp; Backtester</strong>
+            <span>No-code and pro-code tools to build, test, and deploy custom algorithmic strategies.</span>
+          </div>
+        </li>
+        <li>
+          <div class="feat-dot"></div>
+          <div class="feat-text">
+            <strong>Risk Management Suite</strong>
+            <span>Real-time portfolio risk monitoring, drawdown controls, and automated circuit breakers.</span>
+          </div>
+        </li>
+        <li>
+          <div class="feat-dot"></div>
+          <div class="feat-text">
+            <strong>Broker Integration &amp; API</strong>
+            <span>Seamless connectivity to major Indian and global brokers with a full REST/WebSocket API.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="fade-up">
+      <div class="platform-visual">
+        <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.5rem;">Strategy Performance Snapshot</div>
+        <div class="pv-bar-row"><span class="pv-label">Momentum</span><div class="pv-bar-bg"><div class="pv-bar-fill" style="width:88%;animation-delay:0.1s"></div></div><span class="pv-val">+88%</span></div>
+        <div class="pv-bar-row"><span class="pv-label">Mean Rev.</span><div class="pv-bar-bg"><div class="pv-bar-fill" style="width:72%;animation-delay:0.2s"></div></div><span class="pv-val">+72%</span></div>
+        <div class="pv-bar-row"><span class="pv-label">Vol Arb</span><div class="pv-bar-bg"><div class="pv-bar-fill" style="width:65%;animation-delay:0.3s"></div></div><span class="pv-val">+65%</span></div>
+        <div class="pv-bar-row"><span class="pv-label">Delta Hdg.</span><div class="pv-bar-bg"><div class="pv-bar-fill" style="width:54%;animation-delay:0.4s"></div></div><span class="pv-val">+54%</span></div>
+        <div style="font-size:0.6rem;color:rgba(255,255,255,0.2);margin-top:1rem;">Illustrative back-tested returns. Past performance not indicative of future results.</div>
+      </div>
+      <div class="plan-cards">
+        <div class="plan-card">
+          <div class="plan-name">Starter</div>
+          <span class="plan-price">Free</span>
+          <span class="plan-per">forever</span>
+          <ul class="plan-features">
+            <li>3 live strategies</li>
+            <li>Basic analytics</li>
+            <li>Paper trading</li>
+            <li>Community access</li>
+          </ul>
+        </div>
+        <div class="plan-card featured">
+          <div class="plan-name">Pro</div>
+          <span class="plan-price"><sup>₹</sup>99</span>
+          <span class="plan-per">/ month</span>
+          <ul class="plan-features">
+            <li>Unlimited strategies</li>
+            <li>AI signal access</li>
+            <li>Full backtesting</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Institutional</div>
+          <span class="plan-price" style="font-size:1.4rem;">Custom</span>
+          <span class="plan-per">contact us</span>
+          <ul class="plan-features">
+            <li>White-label option</li>
+            <li>Dedicated infra</li>
+            <li>SLA guarantee</li>
+            <li>Co-development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="fade-up">
+    <span class="eyebrow">Intelligence</span>
+    <h2>Research &amp; Market Insights</h2>
+    <span class="gold-line"></span>
+    <p style="max-width:560px;">Our research team distils complex global developments into clear, actionable intelligence — empowering investors to stay ahead of the curve.</p>
+  </div>
+  <div class="research-grid">
+    <div class="research-card fade-up">
+      <span class="research-tag">Macro</span>
+      <h4>Global Rate Cycles &amp; Emerging Market Implications</h4>
+      <p>How shifting Fed and ECB policy is reshaping capital flows, currency dynamics, and equity valuations across emerging markets including India.</p>
+    </div>
+    <div class="research-card fade-up">
+      <span class="research-tag">Sector Deep-Dive</span>
+      <h4>India's Infrastructure Supercycle: Identifying the Compounders</h4>
+      <p>A systematic analysis of capex pipelines, order books, and valuation multiples across the infrastructure and capital goods sectors.</p>
+    </div>
+    <div class="research-card fade-up">
+      <span class="research-tag">Derivatives</span>
+      <h4>Volatility Regimes &amp; Options Strategy Calibration</h4>
+      <p>Quantitative framework for adjusting options strategies in response to changing implied volatility regimes and term structure dynamics.</p>
+    </div>
+  </div>
+  <div style="margin-top:3rem;" class="fade-up">
+    <a href="#contact" class="btn-primary">Subscribe to Research</a>
+  </div>
+</section>
+
+
+<!-- INVEST -->
+<section id="invest">
+  <div class="fade-up" style="margin-bottom:1rem;">
+    <span class="eyebrow">Investment Solutions</span>
+    <h2>Find the right vehicle for you</h2>
+    <span class="gold-line"></span>
+  </div>
+  <div class="invest-tabs">
+    <button class="invest-tab active" onclick="showPanel('smallcase', event)">Smallcase</button>
+    <button class="invest-tab" onclick="showPanel('pms', event)">PMS</button>
+    <button class="invest-tab" onclick="showPanel('aif', event)">AIF</button>
+    <button class="invest-tab" onclick="showPanel('algo', event)">Algo Co-Investment</button>
+  </div>
+
+  <div id="panel-smallcase" class="invest-panel active">
+    <div class="invest-detail">
+      <h3>Expert-Built Smallcases</h3>
+      <p>Curated, theme-based equity baskets built by our research team and quantitative analysts — giving retail investors seamless access to institutional-grade portfolio construction.</p>
+      <ul class="invest-points">
+        <li>Thematic &amp; factor-based portfolios (quality, momentum, value)</li>
+        <li>Direct stock ownership — no fund-level fees or lock-ins</li>
+        <li>Systematic rebalancing based on quantitative triggers</li>
+        <li>Transparent holdings and methodology</li>
+        <li>Accessible via major broker integrations</li>
+      </ul>
+    </div>
+    <div class="invest-highlight">
+      <span class="stat">₹500</span>
+      <span class="stat-label">Minimum Investment</span>
+      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <span class="stat" style="font-size:2rem;">Retail</span>
+        <span class="stat-label">Target Segment</span>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="#contact" class="btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="panel-pms" class="invest-panel">
+    <div class="invest-detail">
+      <h3>Portfolio Management Services (PMS)</h3>
+      <p>SEBI-regulated, individually managed equity portfolios for high-net-worth investors — combining our research edge with active risk management for superior long-term performance.</p>
+      <ul class="invest-points">
+        <li>Personalised portfolios tailored to your risk profile and objectives</li>
+        <li>Direct equity ownership with full transparency</li>
+        <li>Active management by our investment committee</li>
+        <li>Quarterly performance reviews and reporting</li>
+        <li>Dedicated relationship manager</li>
+      </ul>
+    </div>
+    <div class="invest-highlight">
+      <span class="stat">₹50L</span>
+      <span class="stat-label">Minimum Investment (SEBI)</span>
+      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <span class="stat" style="font-size:2rem;">HNI</span>
+        <span class="stat-label">Target Segment</span>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="#contact" class="btn-primary">Schedule a Call</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="panel-aif" class="invest-panel">
+    <div class="invest-detail">
+      <h3>Alternative Investment Fund (AIF)</h3>
+      <p>Our SEBI-registered AIF provides access to sophisticated, non-traditional strategies — including long/short equity, options writing, and special situations — for eligible institutional and ultra-HNI investors.</p>
+      <ul class="invest-points">
+        <li>Category I / II / III AIF structures (as applicable)</li>
+        <li>Absolute return focus with defined drawdown controls</li>
+        <li>Diversified across multiple strategies and instruments</li>
+        <li>Rigorous compliance and investor reporting</li>
+        <li>Access to strategies unavailable in traditional fund formats</li>
+      </ul>
+    </div>
+    <div class="invest-highlight">
+      <span class="stat">₹1Cr</span>
+      <span class="stat-label">Minimum Investment (SEBI)</span>
+      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <span class="stat" style="font-size:2rem;">UHNI</span>
+        <span class="stat-label">Target Segment</span>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="#contact" class="btn-primary">Request Prospectus</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="panel-algo" class="invest-panel">
+    <div class="invest-detail">
+      <h3>Algorithmic Co-Investment</h3>
+      <p>Participate directly in our proprietary algorithmic trading strategies. We run proven, back-tested derivative strategies on our own capital — and open select tranches to trusted investors seeking above-market returns.</p>
+      <ul class="invest-points">
+        <li>Skin-in-the-game: we invest our own capital in every strategy</li>
+        <li>Rigorous back-tested and live track record</li>
+        <li>Full transparency on strategy logic and risk parameters</li>
+        <li>Monthly reporting with granular trade-level data</li>
+        <li>Performance-based fee structure — aligned with your success</li>
+      </ul>
+    </div>
+    <div class="invest-highlight">
+      <span class="stat">Select</span>
+      <span class="stat-label">Invitation-Based Access</span>
+      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <span class="stat" style="font-size:2rem;">All</span>
+        <span class="stat-label">For Informed Investors</span>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="#contact" class="btn-primary">Express Interest</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- OUR APPROACH -->
+<section id="approach">
+  <div class="fade-up" style="text-align:center; max-width:600px; margin:0 auto;">
+    <span class="eyebrow">How It Works</span>
+    <h2>Our Partner Journey</h2>
+    <span class="green-line" style="margin-left:auto; margin-right:auto;"></span>
+    <p>A simple, transparent five-stage journey — from first conversation to long-term partnership. No surprises, no pressure.</p>
+  </div>
+  <div class="approach-steps fade-up">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Information</h4>
+      <p>We establish contact and share what Peepal Tree does, how it works, and what to expect.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Interest</h4>
+      <p>We answer all your questions 1:1, understand your needs, and recommend the right plan.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Relation</h4>
+      <p>You decide to partner with us. Agreement is prepared, signed, and the partnership is formalised.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Experience</h4>
+      <p>Funds received, investment structured, and deployed. Monthly performance updates are shared proactively.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <h4>Advocacy</h4>
+      <p>You experience the Peepal Tree difference — and share it with others you trust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DIFFERENT -->
+<section id="why">
+  <div class="why-layout">
+    <div class="fade-up">
+      <span class="eyebrow">Why We Are Different</span>
+      <h2>What makes us <em style="font-style:italic; color:var(--forest);">WOW.</em></h2>
+      <span class="green-line"></span>
+      <ul class="why-list">
+        <li>
+          <div class="why-icon">⊕</div>
+          <div>
+            <strong>True partnership model</strong>
+            <span>We have skin in the game — your profit is our profit. The LLP structure puts us on the same side as you.</span>
+          </div>
+        </li>
+        <li>
+          <div class="why-icon">◈</div>
+          <div>
+            <strong>Better returns at lower risk</strong>
+            <span>Combining investing + options trading at calculated risk — the "WOW" of the Peepal Tree approach.</span>
+          </div>
+        </li>
+        <li>
+          <div class="why-icon">◉</div>
+          <div>
+            <strong>Full transparency, zero hidden charges</strong>
+            <span>No commissions, no undisclosed fees. You see everything, always.</span>
+          </div>
+        </li>
+        <li>
+          <div class="why-icon">⟳</div>
+          <div>
+            <strong>You are a partner, not a product</strong>
+            <span>Proactive updates, respectful communication, and genuine care for your financial future.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="fade-up">
+      <h3 style="margin-bottom:1.5rem;">Our Promise to You</h3>
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="need">You said</div>
+          <div class="offer">"Don't lose my money"</div>
+        </div>
+        <div class="promise-card">
+          <div class="need">We deliver</div>
+          <div class="offer">Protect Capital</div>
+        </div>
+        <div class="promise-card">
+          <div class="need">You said</div>
+          <div class="offer">"I want long-term growth"</div>
+        </div>
+        <div class="promise-card">
+          <div class="need">We deliver</div>
+          <div class="offer">Grow Capital</div>
+        </div>
+        <div class="promise-card">
+          <div class="need">You said</div>
+          <div class="offer">"No hidden charges"</div>
+        </div>
+        <div class="promise-card">
+          <div class="need">We deliver</div>
+          <div class="offer">Full Transparency</div>
+        </div>
+        <div class="promise-card">
+          <div class="need">You said</div>
+          <div class="offer">"Don't make me chase info"</div>
+        </div>
+        <div class="promise-card">
+          <div class="need">We deliver</div>
+          <div class="offer">Peace of Mind</div>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem; padding:1.25rem 1.5rem; background:var(--white); border:0.5px solid var(--border-mid); border-radius:2px; font-size:0.82rem; color:var(--muted);">
+        <strong style="display:block; color:var(--ink); margin-bottom:0.3rem;">Our Principles</strong>
+        Don't lose money. Do the right thing. Be fair to all.
+        <strong style="display:block; color:var(--ink); margin-top:0.75rem; margin-bottom:0.3rem;">Our Values</strong>
+        Honesty · Teamwork · Courage · Resilience
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="team-layout">
+    <div class="team-intro fade-up">
+      <span class="eyebrow">The Team</span>
+      <h2>Institutional expertise.<br />Entrepreneurial soul.</h2>
+      <span class="green-line"></span>
+      <p>We are a small team of five senior professionals who've spent combined decades at some of the world's most respected institutions. We left comfortable positions to build something we believe in — and we invest our own capital alongside yours.</p>
+      <p>Our educational pedigree spans IITs, the University of St. Gallen (MBA-HSG, Switzerland), and CFA/FRM credentials. Our professional experience spans global finance, technology, consulting, and capital markets.</p>
+      <div class="team-values">
+        <span class="value-tag">Honesty</span>
+        <span class="value-tag">Teamwork</span>
+        <span class="value-tag">Courage</span>
+        <span class="value-tag">Resilience</span>
+        <span class="value-tag">Meritocracy</span>
+        <span class="value-tag">Entrepreneurial</span>
+      </div>
+      <div class="culture-quote">
+        <p>"Someone is sitting in the shade today because someone planted a tree a long time ago."</p>
+        <cite>— Warren Buffett · The Peepal Tree philosophy</cite>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="team-members">
+        <div class="team-member">
+          <div class="member-avatar">RG</div>
+          <div>
+            <div class="member-name">Ratan Gupta</div>
+            <div class="member-firms">KV (Edtech) · Headstrong · B. Tech - IIT Kharagpur · FRM, CFA - CFA Institute USA</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar">BR</div>
+          <div>
+            <div class="member-name">Bharat Rawal</div>
+            <div class="member-firms">KPMG · Microsoft · B. Tech - IIT Delhi · MS - UC Irvine USA · MBA - HSG Switzerland</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETURNS ILLUSTRATION -->
+<section id="returns">
+  <div class="returns-layout">
+    <div class="fade-up">
+      <span class="eyebrow">Illustrative Returns</span>
+      <h2>What your ₹1 Cr could become</h2>
+      <span class="green-line"></span>
+      <p>By combining systematic equity investing with disciplined options trading, our strategy targets a partner CAGR meaningfully above what index funds alone can deliver — at manageable, defined risk.</p>
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Conservative</th>
+            <th>Moderate</th>
+            <th>Optimistic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Investing CAGR</td>
+            <td>10%</td>
+            <td>12%</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td>Options CAGR</td>
+            <td>10%</td>
+            <td>16%</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>₹1Cr → after 20 yrs</td>
+            <td class="highlight">~₹16Cr</td>
+            <td class="highlight">~₹38Cr</td>
+            <td class="highlight">~₹87Cr</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="returns-note">Pre-tax projections in hypothetical scenarios for illustration only. Past performance is not indicative of future results.</p>
+    </div>
+    <div class="fade-up">
+      <div class="chart-area">
+        <p style="font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem;">20-Year Growth from ₹1 Cr</p>
+        <div class="chart-bars">
+          <div class="chart-row">
+            <span class="chart-label">Index (~12%)</span>
+            <div class="chart-bg"><div class="chart-fill" style="width:22%; background:var(--muted); animation-delay:0s"></div></div>
+            <span class="chart-val" style="color:var(--muted)">~₹10Cr</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-label">Conservative</span>
+            <div class="chart-bg"><div class="chart-fill" style="width:36%; animation-delay:0.1s"></div></div>
+            <span class="chart-val">~₹16Cr</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-label">Moderate</span>
+            <div class="chart-bg"><div class="chart-fill" style="width:56%; animation-delay:0.2s; background:var(--forest-mid)"></div></div>
+            <span class="chart-val">~₹38Cr</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-label">Optimistic</span>
+            <div class="chart-bg"><div class="chart-fill" style="width:100%; animation-delay:0.3s; background:var(--leaf)"></div></div>
+            <span class="chart-val">~₹87Cr</span>
+          </div>
+        </div>
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:0.5px solid var(--border);">
+          <p style="font-size:0.8rem; color:var(--muted); font-family:var(--serif); font-style:italic; line-height:1.6;">"If you're able to earn an 18% return on your portfolio, you are no less than a King. If the return is 21%, you are an Emperor."</p>
+          <p style="font-size:0.7rem; color:var(--leaf); margin-top:0.5rem; letter-spacing:0.08em;">— Rakesh Jhunjhunwala</p>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem; text-align:center;">
+        <a href="#contact" class="btn-primary">Start the Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="eyebrow">A Plant Is Planted — Make It Grow</span>
+  <h2>Ready to grow your wealth sustainably?</h2>
+  <span class="green-line"></span>
+  <p>Whether you're curious, ready to invest, or want to learn more — we'd love to speak with you. Every partnership starts with a conversation.</p>
+
+  <div class="contact-form-wrap">
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="521c5bca-bd9d-4627-91d8-c781edda0951">
+      <input type="hidden" name="subject" value="New enquiry — Peepal Tree Investments LLP">
+      <input type="hidden" name="from_name" value="Peepal Tree Investments LLP Website">
+      <input type="hidden" name="redirect" value="false">
+      <div class="form-row-grid">
+        <div class="form-row">
+          <label class="form-label" for="name">Full Name</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="interest">I'm interested in</label>
+        <select class="form-input" id="interest" name="interest">
+          <option value="">Select an option...</option>
+          <option>Smallcase</option>
+          <option>Portfolio Management Services (PMS)</option>
+          <option>Alternative Investment Fund (AIF)</option>
+          <option>Algorithmic Co-Investment</option>
+          <option>Trading Platform</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-input" id="message" name="message" placeholder="Tell us a bit about what you're looking for..."></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="submit-btn">Send Message</button>
+      <p class="form-msg success" id="form-success">✓ Message sent — we'll be in touch shortly.</p>
+      <p class="form-msg error" id="form-error">Something went wrong. Please email us directly at Info@peepaltreeinvestments.com</p>
+    </form>
+  </div>
+
+  <div class="contact-detail">
+    <div class="contact-item">
+      <span class="label">Markets</span>
+      <span class="value">India NSE/BSE · US · EU</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="/images/PeepalTreeLogo.png" style="width:28px;height:28px;object-fit:contain;" alt="" />
+    <span class="footer-logo-text">Peepal Tree Investments LLP</span>
+  </div>
+  <div class="footer-links">
+    <a href="#problem">Our Purpose</a>
+    <a href="#services">Our Offerings</a>
+    <a href="#platform">Platform</a>
+    <a href="#research">Research</a>
+    <a href="#invest">Invest</a>
+    <a href="#team">Team</a>
+    <a href="#returns">Returns</a>
+    <a href="#contact">Contact</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+  </div>
+  <span>© 2025 Peepal Tree Investments LLP. All rights reserved.</span>
+</footer>
+
+<div class="disclaimer">
+  <strong style="color:rgba(255,255,255,0.3)">Regulatory Disclaimer:</strong> Investments in securities markets are subject to market risks. Please read all related documents carefully before investing. Past performance is not indicative of future results. Peepal Tree Investments LLP is not a registered investment advisor. PMS and AIF services are subject to SEBI regulations and minimum investment thresholds as applicable. Algorithmic and options trading involve significant risk. Return projections shown are hypothetical, pre-tax, and for illustrative purposes only. This website does not constitute investment advice. Please consult a qualified financial advisor before making investment decisions.
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            contactForm.reset();
+            successMsg.style.display = 'block';
+          } else {
+            throw new Error('Failed');
+          }
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        }).catch(() => {
+          errorMsg.style.display = 'block';
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        });
+    });
+  }
+</script>
+
+</body>
+</html>
