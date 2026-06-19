@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Peepal Tree Investments — Growing Wealth Sustainably</title>
+<title>Peepal Tree Capital — Growing Wealth Sustainably</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
@@ -630,15 +630,133 @@
   .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* RESPONSIVE */
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px; height: 18px;
+    background: none; border: none; cursor: pointer; padding: 0; z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block; width: 100%; height: 1.5px;
+    background: var(--ink); border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(8.25px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-8.25px) rotate(-45deg); }
+
+  /* RESPONSIVE — TABLET (≤900px) */
   @media (max-width: 900px) {
-    .hero-bg, .hero-tree-wrap { opacity: 0.15; }
-    .purpose-layout, .problem-layout, .services-intro, .offerings-intro,
-    .why-layout, .team-layout, .returns-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .services-grid, .plan-grid, .approach-steps, .promise-grid, .form-row-grid { grid-template-columns: 1fr; }
-    .pillars { grid-template-columns: 1fr 1fr; }
+    section { padding: 4rem 5vw; }
+
+    /* Nav */
     .nav-links { display: none; }
-    .hero-stats { gap: 2rem; }
+    .nav-hamburger { display: flex; }
+    .nav-links.open {
+      display: flex; flex-direction: column; align-items: flex-start;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
+      padding: 6rem 5vw 3rem; gap: 1.5rem; z-index: 150;
+    }
+    .nav-links.open a { font-size: 1.1rem; letter-spacing: 0.08em; color: var(--ink); }
+    .nav-links.open .nav-cta { border: 0.5px solid var(--forest) !important; padding: 0.6rem 1.4rem; }
+    nav { padding: 0.9rem 5vw; }
+
+    /* Hero */
+    .hero-bg { opacity: 0.15; }
+    .hero-tree-wrap { display: none; }
+    .hero-content h1 { font-size: clamp(2.4rem, 7vw, 3.5rem); }
+    .hero-stats { gap: 2rem; flex-wrap: wrap; }
+
+    /* All 2-col grids → 1 col */
+    .purpose-layout, .problem-layout, .services-intro, .offerings-intro,
+    .why-layout, .team-layout, .returns-layout, .platform-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    /* Service/plan grids */
+    .services-grid { grid-template-columns: 1fr; gap: 1px; }
+    .plan-grid, .promise-grid, .form-row-grid { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+
+    /* Approach steps — 3 col on tablet */
+    .approach-steps { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .approach-steps::before { display: none; }
+
+    /* Platform plan cards */
+    .plan-cards { grid-template-columns: 1fr; }
+
+    /* Research grid */
+    .research-grid { grid-template-columns: 1fr; }
+
+    /* Invest tabs — scrollable */
+    .invest-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+    .invest-panel.active { grid-template-columns: 1fr; gap: 2rem; }
+
+    /* Contact */
+    .contact-detail { gap: 1.5rem; }
+  }
+
+  /* RESPONSIVE — MOBILE (≤600px) */
+  @media (max-width: 600px) {
+    section { padding: 3.5rem 5vw; }
+
+    /* Nav */
+    .nav-logo-text { font-size: 1.05rem; }
+    .nav-logo-tree { width: 36px; height: 36px; }
+
+    /* Hero */
+    .hero-content h1 { font-size: clamp(2rem, 9vw, 2.8rem); }
+    .hero-content p { font-size: 0.92rem; }
+    .hero-tagline { font-size: 1rem; }
+    .hero-stats { gap: 1.5rem; }
+    .hero-stat-num { font-size: 1.8rem; }
+
+    /* Typography */
+    h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    h3 { font-size: 1.2rem; }
+
+    /* Purpose pillars — 1 col on mobile */
+    .pillars { grid-template-columns: 1fr; }
+
+    /* Approach steps — 2 col on mobile */
+    .approach-steps { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+    /* Service cards */
+    .service-card { padding: 2rem 1.5rem; }
+    .service-num { font-size: 2.5rem; }
+
+    /* Platform plan cards stacked */
+    .plan-cards { grid-template-columns: 1fr; background: none; gap: 1rem; }
+    .plan-card { border: 0.5px solid rgba(255,255,255,0.1); border-radius: 3px; }
+    .plan-card.featured { border-color: var(--forest); }
+
+    /* Invest tabs */
+    .invest-tab { padding: 0.65rem 1.1rem; font-size: 0.7rem; }
+
+    /* Team member cards */
+    .team-member { flex-direction: column; align-items: flex-start; }
+
+    /* Returns table — make it scrollable */
+    .scenario-table { font-size: 0.78rem; }
+    .returns-layout > div:first-child { overflow-x: auto; }
+
+    /* Contact form */
+    .form-row-grid { grid-template-columns: 1fr; }
+    .contact-detail { flex-direction: column; gap: 1.25rem; align-items: center; }
+
+    /* Footer */
+    footer { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; }
+
+    /* Buttons */
+    .btn-primary, .btn-outline { display: block; text-align: center; margin-right: 0; margin-bottom: 0.75rem; }
+    .hero-content .btn-outline { display: inline-block; }
+    .contact-actions { flex-direction: column; align-items: center; }
+    .contact-actions a { width: 100%; max-width: 320px; text-align: center; }
+
+    /* Why section promise grid */
+    .promise-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -647,13 +765,16 @@
 <!-- NAV -->
 <nav id="main-nav">
   <a href="#" class="nav-logo">
-    <img src="/images/PeepalTreeLogo.png" class="nav-logo-tree" alt="Peepal Tree" />
+    <img src="images/PeepalTreeLogo.png" class="nav-logo-tree" alt="Peepal Tree" />
     <div class="nav-logo-text">
       Peepal Tree
-      <span>Investments LLP</span>
+      <span>Capital</span>
     </div>
   </a>
-  <ul class="nav-links">
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#problem">The Problem</a></li>
     <li><a href="#services">Our Offerings</a></li>
     <li><a href="#platform">Platform</a></li>
@@ -682,21 +803,18 @@
         <span class="hero-stat-label">Years avg. experience</span>
       </div>
       <div>
-        <span class="hero-stat-num">5</span>
-        <span class="hero-stat-label">Founding partners</span>
+        <span class="hero-stat-num">4</span>
+        <span class="hero-stat-label">Core capabilities</span>
       </div>
       <div>
         <span class="hero-stat-num">4</span>
         <span class="hero-stat-label">Countries of pedigree</span>
       </div>
-      <div>
-        <span class="hero-stat-num">₹100cr</span>
-        <span class="hero-stat-label">AUM aspiration by 2030</span>
-      </div>
+
     </div>
   </div>
   <div class="hero-tree-wrap">
-    <img src="/images/PeepalTreeLogo.png" style="width:300px;height:300px;object-fit:contain;" alt="" />
+    <img src="images/PeepalTreeLogo.png" style="width:300px;height:300px;object-fit:contain;" alt="" />
   </div>
 </section>
 
@@ -1118,7 +1236,7 @@
           <div class="why-icon">⊕</div>
           <div>
             <strong>True partnership model</strong>
-            <span>We have skin in the game — your profit is our profit. The LLP structure puts us on the same side as you.</span>
+            <span>We have skin in the game — your profit is our profit. We invest our own capital alongside yours, putting us firmly on the same side as you.</span>
           </div>
         </li>
         <li>
@@ -1252,18 +1370,6 @@
         </thead>
         <tbody>
           <tr>
-            <td>Investing CAGR</td>
-            <td>10%</td>
-            <td>12%</td>
-            <td>15%</td>
-          </tr>
-          <tr>
-            <td>Options CAGR</td>
-            <td>10%</td>
-            <td>16%</td>
-            <td>20%</td>
-          </tr>
-          <tr>
             <td>₹1Cr → after 20 yrs</td>
             <td class="highlight">~₹16Cr</td>
             <td class="highlight">~₹38Cr</td>
@@ -1320,8 +1426,8 @@
   <div class="contact-form-wrap">
     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="521c5bca-bd9d-4627-91d8-c781edda0951">
-      <input type="hidden" name="subject" value="New enquiry — Peepal Tree Investments LLP">
-      <input type="hidden" name="from_name" value="Peepal Tree Investments LLP Website">
+      <input type="hidden" name="subject" value="New enquiry — Peepal Tree Capital">
+      <input type="hidden" name="from_name" value="Peepal Tree Capital Website">
       <input type="hidden" name="redirect" value="false">
       <div class="form-row-grid">
         <div class="form-row">
@@ -1332,6 +1438,10 @@
           <label class="form-label" for="email">Email</label>
           <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required>
         </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="phone">Phone Number</label>
+        <input class="form-input" type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
       </div>
       <div class="form-row">
         <label class="form-label" for="interest">I'm interested in</label>
@@ -1366,8 +1476,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
-    <img src="/images/PeepalTreeLogo.png" style="width:28px;height:28px;object-fit:contain;" alt="" />
-    <span class="footer-logo-text">Peepal Tree Investments LLP</span>
+    <img src="images/PeepalTreeLogo.png" style="width:28px;height:28px;object-fit:contain;" alt="" />
+    <span class="footer-logo-text">Peepal Tree Capital</span>
   </div>
   <div class="footer-links">
     <a href="#problem">Our Purpose</a>
@@ -1381,14 +1491,35 @@
     <a href="#">Privacy Policy</a>
     <a href="#">Terms of Use</a>
   </div>
-  <span>© 2025 Peepal Tree Investments LLP. All rights reserved.</span>
+  <span>© 2025 Peepal Tree Capital. All rights reserved.</span>
 </footer>
 
 <div class="disclaimer">
-  <strong style="color:rgba(255,255,255,0.3)">Regulatory Disclaimer:</strong> Investments in securities markets are subject to market risks. Please read all related documents carefully before investing. Past performance is not indicative of future results. Peepal Tree Investments LLP is not a registered investment advisor. PMS and AIF services are subject to SEBI regulations and minimum investment thresholds as applicable. Algorithmic and options trading involve significant risk. Return projections shown are hypothetical, pre-tax, and for illustrative purposes only. This website does not constitute investment advice. Please consult a qualified financial advisor before making investment decisions.
+  <strong style="color:rgba(255,255,255,0.3)">Regulatory Disclaimer:</strong> Investments in securities markets are subject to market risks. Please read all related documents carefully before investing. Past performance is not indicative of future results. Peepal Tree Capital is not a registered investment advisor. PMS and AIF services are subject to SEBI regulations and minimum investment thresholds as applicable. Algorithmic and options trading involve significant risk. Return projections shown are hypothetical, pre-tax, and for illustrative purposes only. This website does not constitute investment advice. Please consult a qualified financial advisor before making investment decisions.
 </div>
 
 <script>
+  function showPanel(id, event) {
+    document.querySelectorAll('.invest-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.invest-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Hamburger menu
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
   window.addEventListener('scroll', () => {
     document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
   });
