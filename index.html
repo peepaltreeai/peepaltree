@@ -371,6 +371,7 @@
   .form-row { margin-bottom: 1.1rem; }
   .form-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .form-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.38); display: block; margin-bottom: 0.5rem; }
+  .form-label .req { color: #e06060; margin-left: 2px; }
   .form-input {
     width: 100%; background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.14);
     color: var(--white); font-family: var(--sans); font-size: 0.92rem; font-weight: 300;
@@ -1451,26 +1452,25 @@
   <div class="contact-form-wrap">
     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="521c5bca-bd9d-4627-91d8-c781edda0951">
-      <input type="hidden" name="subject" value="New enquiry — Peepal Tree Capital">
       <input type="hidden" name="from_name" value="Peepal Tree Capital Website">
       <input type="hidden" name="redirect" value="false">
       <div class="form-row-grid">
         <div class="form-row">
-          <label class="form-label" for="name">Full Name</label>
+          <label class="form-label" for="name">Full Name <span class="req">*</span></label>
           <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
         </div>
         <div class="form-row">
-          <label class="form-label" for="email">Email</label>
+          <label class="form-label" for="email">Email <span class="req">*</span></label>
           <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required>
         </div>
       </div>
       <div class="form-row">
-        <label class="form-label" for="phone">Phone Number</label>
+        <label class="form-label" for="phone">Phone Number <span class="req">*</span></label>
         <input class="form-input" type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
       </div>
       <div class="form-row">
-        <label class="form-label" for="interest">I'm interested in</label>
-        <select class="form-input" id="interest" name="interest">
+        <label class="form-label" for="interest">I'm interested in <span class="req">*</span></label>
+        <select class="form-input" id="interest" name="interest" required>
           <option value="">Select an option...</option>
           <option>Smallcase</option>
           <option>Portfolio Management Services (PMS)</option>
@@ -1481,8 +1481,8 @@
         </select>
       </div>
       <div class="form-row">
-        <label class="form-label" for="message">Message</label>
-        <textarea class="form-input" id="message" name="message" placeholder="Tell us a bit about what you're looking for..."></textarea>
+        <label class="form-label" for="message">Message <span class="req">*</span></label>
+        <textarea class="form-input" id="message" name="message" placeholder="Tell us a bit about what you're looking for..." required></textarea>
       </div>
       <button type="submit" class="form-submit" id="submit-btn">Send Message</button>
       <p class="form-msg success" id="form-success">✓ Message sent — we'll be in touch shortly.</p>
