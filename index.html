@@ -140,7 +140,7 @@
     display: flex; gap: 3rem; margin-top: 3.5rem;
     padding-top: 2rem; border-top: 0.5px solid var(--border); flex-wrap: wrap;
   }
-  .hero-stat-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--ink); display: block; }
+  .hero-stat-num { font-family: var(--sans); font-size: 2.4rem; font-weight: 300; color: var(--ink); display: block; letter-spacing: -0.02em; }
   .hero-stat-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 
   /* BODHI TREE SVG (decorative, right side) */
@@ -164,7 +164,7 @@
     border-radius: 2px; transition: border-color 0.3s;
   }
   .pillar:hover { border-color: var(--leaf); }
-  .pillar-glyph { font-family: var(--serif); font-size: 1.8rem; color: var(--leaf); display: block; margin-bottom: 0.6rem; }
+  .pillar-glyph { font-family: var(--sans); font-size: 1.8rem; color: var(--leaf); display: block; margin-bottom: 0.6rem; }
   .pillar h4 { font-family: var(--sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.3rem; }
   .pillar p { font-size: 0.84rem; color: rgba(255,255,255,0.46); }
 
@@ -200,7 +200,7 @@
   }
   .service-card:hover::after { width: 100%; }
   .service-card:hover { background: var(--leaf-pale); }
-  .service-num { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: var(--border-mid); line-height: 1; margin-bottom: 1.25rem; }
+  .service-num { font-family: var(--sans); font-size: 3.5rem; font-weight: 300; color: var(--border-mid); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.03em; }
   .service-card h3 { margin-bottom: 0.85rem; }
   .service-card p { font-size: 0.9rem; }
   .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
@@ -228,7 +228,7 @@
   .plan-tier.gold { color: var(--gold); }
   .plan-tier.silver { color: var(--muted); }
   .plan-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-  .plan-card .fee { font-family: var(--serif); font-size: 1.6rem; color: var(--forest); display: block; margin: 0.5rem 0 0.25rem; }
+  .plan-card .fee { font-family: var(--sans); font-size: 1.6rem; font-weight: 300; color: var(--forest); display: block; margin: 0.5rem 0 0.25rem; letter-spacing: -0.02em; }
   .plan-card .fee-note { font-size: 0.75rem; color: var(--muted); margin-bottom: 1.25rem; }
   .plan-divider { height: 0.5px; background: var(--border); margin: 1.25rem 0; }
   .plan-features { list-style: none; }
@@ -252,7 +252,7 @@
   .step-num {
     width: 44px; height: 44px; border-radius: 50%;
     background: var(--forest); color: var(--white);
-    font-family: var(--serif); font-size: 1.2rem;
+    font-family: var(--sans); font-size: 1.2rem;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 1rem;
   }
@@ -307,7 +307,7 @@
   .member-avatar {
     width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
     background: var(--forest); display: flex; align-items: center; justify-content: center;
-    font-family: var(--serif); font-size: 1.1rem; color: var(--white); font-weight: 500;
+    font-family: var(--sans); font-size: 1.1rem; color: var(--white); font-weight: 500;
   }
   .member-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
   .member-firms { font-size: 0.78rem; color: var(--muted); }
@@ -484,7 +484,7 @@
     animation: growBar 1.2s ease forwards;
   }
   @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-  .pv-val { font-size: 0.75rem; color: var(--leaf); width: 36px; text-align: right; flex-shrink: 0; }
+  .pv-val { font-size: 0.75rem; color: var(--leaf); width: 36px; text-align: right; flex-shrink: 0; font-family: var(--sans); }
 
   .plan-cards {
     display: grid;
@@ -509,10 +509,12 @@
   }
   .plan-card.featured .plan-name { color: var(--leaf); }
   .plan-price {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 2rem;
+    font-weight: 300;
     color: var(--white);
     display: block;
+    letter-spacing: -0.02em;
   }
   .plan-price sup { font-size: 1rem; vertical-align: super; }
   .plan-per { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
@@ -615,12 +617,13 @@
     border-left: 2px solid var(--forest);
   }
   .invest-highlight .stat {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 3rem;
     font-weight: 300;
     color: var(--forest);
     display: block;
     margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
   }
   .invest-highlight .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
@@ -629,6 +632,28 @@
   /* ANIMATIONS */
   .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  .rupee { font-size: 0.45em; font-weight: 400; vertical-align: 0.55em; letter-spacing: 0; opacity: 0.75; }
+
+  /* RETURNS CARDS */
+  .returns-cards-always { display: flex; gap: 1rem; margin-top: 2rem; }
+  .ret-card {
+    flex: 1; background: var(--white); border: 0.5px solid var(--border);
+    border-top: 2px solid var(--forest); border-radius: 3px; padding: 1.5rem 1.25rem;
+    transition: box-shadow 0.3s;
+  }
+  .ret-card:hover { box-shadow: 0 4px 20px rgba(58,90,42,0.1); }
+  .ret-card-featured { border-top-color: var(--leaf); }
+  .ret-card-label {
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem;
+  }
+  .ret-card-val {
+    font-family: var(--sans); font-size: 2rem; font-weight: 300;
+    color: var(--forest); line-height: 1; letter-spacing: -0.02em;
+  }
+  .ret-card-featured .ret-card-val { color: var(--forest); }
+  .ret-card-sub { font-size: 0.72rem; color: var(--muted); margin-top: 0.4rem; }
 
   /* HAMBURGER */
   .nav-hamburger {
@@ -737,9 +762,10 @@
     /* Team member cards */
     .team-member { flex-direction: column; align-items: flex-start; }
 
-    /* Returns table — make it scrollable */
-    .scenario-table { font-size: 0.78rem; }
-    .returns-layout > div:first-child { overflow-x: auto; }
+    /* Returns cards — tighten gap on mobile */
+    .returns-cards-always { gap: 0.6rem; }
+    .ret-card { padding: 1.1rem 0.9rem; }
+    .ret-card-val { font-size: 1.6rem; }
 
     /* Contact form */
     .form-row-grid { grid-template-columns: 1fr; }
@@ -1014,7 +1040,7 @@
         </div>
         <div class="plan-card featured">
           <div class="plan-name">Pro</div>
-          <span class="plan-price"><sup>₹</sup>99</span>
+          <span class="plan-price"><span class="rupee">₹</span>99</span>
           <span class="plan-per">/ month</span>
           <ul class="plan-features">
             <li>Unlimited strategies</li>
@@ -1098,7 +1124,7 @@
       </ul>
     </div>
     <div class="invest-highlight">
-      <span class="stat">₹500</span>
+      <span class="stat"><span class="rupee">₹</span>500</span>
       <span class="stat-label">Minimum Investment</span>
       <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
         <span class="stat" style="font-size:2rem;">Retail</span>
@@ -1123,7 +1149,7 @@
       </ul>
     </div>
     <div class="invest-highlight">
-      <span class="stat">₹50L</span>
+      <span class="stat"><span class="rupee">₹</span>50L</span>
       <span class="stat-label">Minimum Investment (SEBI)</span>
       <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
         <span class="stat" style="font-size:2rem;">HNI</span>
@@ -1148,7 +1174,7 @@
       </ul>
     </div>
     <div class="invest-highlight">
-      <span class="stat">₹1Cr</span>
+      <span class="stat"><span class="rupee">₹</span>1Cr</span>
       <span class="stat-label">Minimum Investment (SEBI)</span>
       <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
         <span class="stat" style="font-size:2rem;">UHNI</span>
@@ -1356,27 +1382,26 @@
   <div class="returns-layout">
     <div class="fade-up">
       <span class="eyebrow">Illustrative Returns</span>
-      <h2>What your ₹1 Cr could become</h2>
+      <h2>What could <span style="font-family:var(--sans);font-weight:300;font-size:0.88em;">1 Crore</span> become in <span style="font-family:var(--sans);font-weight:300;font-size:0.88em;">20</span> years?</h2>
       <span class="green-line"></span>
       <p>By combining systematic equity investing with disciplined options trading, our strategy targets a partner CAGR meaningfully above what index funds alone can deliver — at manageable, defined risk.</p>
-      <table class="scenario-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Conservative</th>
-            <th>Moderate</th>
-            <th>Optimistic</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>₹1Cr → after 20 yrs</td>
-            <td class="highlight">~₹16Cr</td>
-            <td class="highlight">~₹38Cr</td>
-            <td class="highlight">~₹87Cr</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="returns-cards returns-cards-always">
+        <div class="ret-card">
+          <div class="ret-card-label">Conservative</div>
+          <div class="ret-card-val">~<span class="rupee">₹</span>16Cr</div>
+          <div class="ret-card-sub">₹1Cr → after 20 yrs</div>
+        </div>
+        <div class="ret-card">
+          <div class="ret-card-label">Moderate</div>
+          <div class="ret-card-val">~<span class="rupee">₹</span>38Cr</div>
+          <div class="ret-card-sub">₹1Cr → after 20 yrs</div>
+        </div>
+        <div class="ret-card ret-card-featured">
+          <div class="ret-card-label">Optimistic</div>
+          <div class="ret-card-val">~<span class="rupee">₹</span>87Cr</div>
+          <div class="ret-card-sub">₹1Cr → after 20 yrs</div>
+        </div>
+      </div>
       <p class="returns-note">Pre-tax projections in hypothetical scenarios for illustration only. Past performance is not indicative of future results.</p>
     </div>
     <div class="fade-up">
