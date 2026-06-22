@@ -1462,11 +1462,13 @@
         <div class="form-row">
           <label class="form-label" for="email">Email <span class="req">*</span></label>
           <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required>
+          <span id="email-error" style="display:none;color:#c0392b;font-size:0.75rem;margin-top:0.3rem;">Please enter a valid email address.</span>
         </div>
       </div>
       <div class="form-row">
         <label class="form-label" for="phone">Phone Number <span class="req">*</span></label>
-        <input class="form-input" type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+        <input class="form-input" type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required inputmode="tel" onkeypress="return event.charCode==43||event.charCode==32||(event.charCode>=48&&event.charCode<=57)">
+        <span id="phone-error" style="display:none;color:#c0392b;font-size:0.75rem;margin-top:0.3rem;">Please enter a valid phone number (digits only).</span>
       </div>
       <div class="form-row">
         <label class="form-label" for="interest">I'm interested in <span class="req">*</span></label>
@@ -1562,6 +1564,17 @@
       e.preventDefault();
       successMsg.style.display = 'none';
       errorMsg.style.display = 'none';
+      // Validate phone
+      const phoneVal = document.getElementById('phone').value;
+      const phoneErr = document.getElementById('phone-error');
+      const phoneOk = /^[\+\d\s\-\(\)]{7,20}$/.test(phoneVal);
+      phoneErr.style.display = phoneOk ? 'none' : 'block';
+      // Validate email
+      const emailVal = document.getElementById('email').value;
+      const emailErr = document.getElementById('email-error');
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+      emailErr.style.display = emailOk ? 'none' : 'block';
+      if (!phoneOk || !emailOk) return;
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
       fetch(contactForm.action, {
