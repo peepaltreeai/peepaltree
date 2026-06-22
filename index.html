@@ -1480,7 +1480,8 @@
             <option value="+33">🇫🇷 +33</option>
             <option value="+81">🇯🇵 +81</option>
           </select>
-          <input class="form-input" type="tel" id="phone" name="phone" placeholder="98765 43210" required inputmode="numeric" onkeypress="return (event.charCode>=48&&event.charCode<=57)||event.charCode==32" style="flex:1;">
+          <input class="form-input" type="tel" id="phone" placeholder="98765 43210" required inputmode="numeric" onkeypress="return (event.charCode>=48&&event.charCode<=57)||event.charCode==32" style="flex:1;">
+          <input type="hidden" id="phone-full" name="phone_full">
         </div>
         <span id="phone-error" style="display:none;color:#c0392b;font-size:0.75rem;margin-top:0.3rem;">Please enter a valid phone number (digits only).</span>
       </div>
@@ -1585,7 +1586,7 @@
       const phoneOk = /^\d[\d\s]{5,14}$/.test(phoneNum);
       phoneErr.style.display = phoneOk ? 'none' : 'block';
       if (phoneOk) {
-        document.getElementById('phone').value = countryCode + ' ' + phoneNum;
+        document.getElementById('phone-full').value = countryCode + ' ' + phoneNum;
       }
       // Validate email
       const emailVal = document.getElementById('email').value;
