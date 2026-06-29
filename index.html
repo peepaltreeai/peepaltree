@@ -587,6 +587,31 @@
   
   /* INVEST */
   #invest { background: var(--white); }
+
+  .top-invest-tabs {
+    display: flex;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2.5rem;
+  }
+  .top-invest-tab {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); padding: 0.75rem 2rem; cursor: pointer;
+    border: none; background: none; border-bottom: 2px solid transparent;
+    margin-bottom: -0.5px; transition: color 0.2s, border-color 0.2s;
+  }
+  .top-invest-tab.active { color: var(--forest); border-bottom-color: var(--forest); }
+  .top-invest-panel { display: none; }
+  .top-invest-panel.active { display: block; }
+
+  .vp-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 3.5rem; align-items: center; }
+  .vp-left p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+  .vp-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .vp-pillar { padding: 1.4rem 1.25rem; border: 0.5px solid var(--border); border-radius: 2px; transition: border-color 0.3s; }
+  .vp-pillar:hover { border-color: var(--leaf); }
+  .vp-pillar-glyph { font-family: var(--serif); font-size: 1.8rem; color: var(--leaf); display: block; margin-bottom: 0.6rem; }
+  .vp-pillar h4 { font-family: var(--sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.3rem; }
+  .vp-pillar p { font-size: 0.84rem; color: var(--muted); margin: 0; }
+
   .invest-tabs {
     display: flex;
     gap: 0;
@@ -594,60 +619,35 @@
     margin-bottom: 3rem;
   }
   .invest-tab {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 0.75rem 2rem;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -0.5px;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); padding: 0.75rem 2rem; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -0.5px;
     transition: color 0.2s, border-color 0.2s;
-    background: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    background: none; border-top: none; border-left: none; border-right: none;
   }
   .invest-tab.active { color: var(--forest); border-bottom-color: var(--forest); }
-
   .invest-panel { display: none; }
   .invest-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 
   .invest-detail h3 { margin-bottom: 1rem; }
   .invest-detail p { margin-bottom: 1.5rem; }
 
-  .invest-points {
-    list-style: none;
-    margin-top: 1.5rem;
-  }
+  .invest-points { list-style: none; margin-top: 1.5rem; }
   .invest-points li {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    font-size: 0.88rem;
-    color: var(--muted);
-    padding: 0.5rem 0;
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    font-size: 0.88rem; color: var(--muted); padding: 0.5rem 0;
     border-bottom: 0.5px solid var(--border);
   }
   .invest-points li:last-child { border-bottom: none; }
   .invest-points li::before { content: "→"; color: var(--forest); flex-shrink: 0; }
 
   .invest-highlight {
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    padding: 2.5rem;
-    border-radius: 2px;
-    border-left: 2px solid var(--forest);
+    background: var(--surface); border: 0.5px solid var(--border);
+    padding: 2.5rem; border-radius: 2px; border-left: 2px solid var(--forest);
   }
   .invest-highlight .stat {
-    font-family: var(--sans);
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--forest);
-    display: block;
-    margin-bottom: 0.25rem;
-    letter-spacing: -0.02em;
+    font-family: var(--sans); font-size: 3rem; font-weight: 300;
+    color: var(--forest); display: block; margin-bottom: 0.25rem; letter-spacing: -0.02em;
   }
   .invest-highlight .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
@@ -723,7 +723,7 @@
 
     /* All 2-col grids → 1 col */
     .purpose-layout, .problem-layout, .services-intro, .offerings-intro,
-    .why-layout, .team-layout, .returns-layout, .platform-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .why-layout, .team-layout, .returns-layout, .platform-layout, .vp-layout { grid-template-columns: 1fr; gap: 2.5rem; }
 
     /* Service/plan grids */
     .services-grid { grid-template-columns: 1fr; gap: 1px; }
@@ -1129,111 +1129,152 @@
   <div class="fade-up" style="margin-bottom:1rem;">
     <span class="eyebrow">Investment Solutions</span>
     <h2>Find the right vehicle for you</h2>
-    <span class="gold-line"></span>
-  </div>
-  <div class="invest-tabs">
-    <button class="invest-tab active" onclick="showPanel('smallcase', event)">Smallcase</button>
-    <button class="invest-tab" onclick="showPanel('pms', event)">PMS</button>
-    <button class="invest-tab" onclick="showPanel('aif', event)">AIF</button>
-    <button class="invest-tab" onclick="showPanel('algo', event)">Algo Co-Investment</button>
   </div>
 
-  <div id="panel-smallcase" class="invest-panel active">
-    <div class="invest-detail">
-      <h3>Expert-Built Smallcases</h3>
-      <p>Curated, theme-based equity baskets built by our research team and quantitative analysts — giving retail investors seamless access to institutional-grade portfolio construction.</p>
-      <ul class="invest-points">
-        <li>Thematic &amp; factor-based portfolios (quality, momentum, value)</li>
-        <li>Direct stock ownership — no fund-level fees or lock-ins</li>
-        <li>Systematic rebalancing based on quantitative triggers</li>
-        <li>Transparent holdings and methodology</li>
-        <li>Accessible via major broker integrations</li>
-      </ul>
-    </div>
-    <div class="invest-highlight">
-      <span class="stat"><span class="rupee">₹</span>1L</span>
-      <span class="stat-label">Minimum Investment</span>
-      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
-        <span class="stat" style="font-size:2rem;">Retail</span>
-        <span class="stat-label">Target Segment</span>
-      </div>
-      <div style="margin-top:1.5rem;">
-        <a href="#contact" class="btn-primary">Get Started</a>
-      </div>
-    </div>
+  <!-- TOP-LEVEL TABS -->
+  <div class="top-invest-tabs">
+    <button class="top-invest-tab active" onclick="showTopPanel('vp', this)">Our Value Proposition</button>
+    <button class="top-invest-tab" onclick="showTopPanel('vehicle', this)">Find the Right Vehicle</button>
   </div>
 
-  <div id="panel-pms" class="invest-panel">
-    <div class="invest-detail">
-      <h3>Portfolio Management Services (PMS)</h3>
-      <p>SEBI-regulated, individually managed equity portfolios for high-net-worth investors — combining our research edge with active risk management for superior long-term performance.</p>
-      <ul class="invest-points">
-        <li>Personalised portfolios tailored to your risk profile and objectives</li>
-        <li>Direct equity ownership with full transparency</li>
-        <li>Active management by our investment committee</li>
-        <li>Quarterly performance reviews and reporting</li>
-        <li>Dedicated relationship manager</li>
-      </ul>
-    </div>
-    <div class="invest-highlight">
-      <span class="stat"><span class="rupee">₹</span>50L</span>
-      <span class="stat-label">Minimum Investment (SEBI)</span>
-      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
-        <span class="stat" style="font-size:2rem;">HNI</span>
-        <span class="stat-label">Target Segment</span>
+  <!-- PANEL 1: VALUE PROPOSITION -->
+  <div id="top-invest-vp" class="top-invest-panel active fade-up">
+    <div class="vp-layout">
+      <div class="vp-left">
+        <p>We believe that intelligent, disciplined investing — anchored in rigorous research, proven strategies, and cutting-edge technology — creates enduring wealth without compromising on principles or risk management.</p>
+        <p>Our approach is systematic, transparent, and built for the long term. We take the same care with your capital that we take with our own — because we invest alongside you.</p>
       </div>
-      <div style="margin-top:1.5rem;">
-        <a href="#contact" class="btn-primary">Schedule a Call</a>
+      <div class="vp-pillars">
+        <div class="vp-pillar">
+          <span class="vp-pillar-glyph">∂</span>
+          <h4>Quantitative Rigor</h4>
+          <p>Proven derivative and algorithmic strategies built on decades of market research.</p>
+        </div>
+        <div class="vp-pillar">
+          <span class="vp-pillar-glyph">◈</span>
+          <h4>Institutional Pedigree</h4>
+          <p>Team alumni of Goldman Sachs, UBS, KPMG, Microsoft and other global leaders.</p>
+        </div>
+        <div class="vp-pillar">
+          <span class="vp-pillar-glyph">⟳</span>
+          <h4>Sustainable Returns</h4>
+          <p>Above-market performance through disciplined risk management and diversification.</p>
+        </div>
+        <div class="vp-pillar">
+          <span class="vp-pillar-glyph">◉</span>
+          <h4>Aligned Interests</h4>
+          <p>We invest our own capital alongside yours — our incentives are fully aligned.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="panel-aif" class="invest-panel">
-    <div class="invest-detail">
-      <h3>Alternative Investment Fund (AIF)</h3>
-      <p>Our SEBI-registered AIF provides access to sophisticated, non-traditional strategies — including long/short equity, options writing, and special situations — for eligible institutional and ultra-HNI investors.</p>
-      <ul class="invest-points">
-        <li>Category I / II / III AIF structures (as applicable)</li>
-        <li>Absolute return focus with defined drawdown controls</li>
-        <li>Diversified across multiple strategies and instruments</li>
-        <li>Rigorous compliance and investor reporting</li>
-        <li>Access to strategies unavailable in traditional fund formats</li>
-      </ul>
+  <!-- PANEL 2: FIND THE RIGHT VEHICLE -->
+  <div id="top-invest-vehicle" class="top-invest-panel">
+    <div class="invest-tabs">
+      <button class="invest-tab active" onclick="showPanel('smallcase', event)">Smallcase</button>
+      <button class="invest-tab" onclick="showPanel('pms', event)">PMS</button>
+      <button class="invest-tab" onclick="showPanel('aif', event)">AIF</button>
+      <button class="invest-tab" onclick="showPanel('algo', event)">Algo Co-Investment</button>
     </div>
-    <div class="invest-highlight">
-      <span class="stat"><span class="rupee">₹</span>1Cr</span>
-      <span class="stat-label">Minimum Investment (SEBI)</span>
-      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
-        <span class="stat" style="font-size:2rem;">UHNI</span>
-        <span class="stat-label">Target Segment</span>
-      </div>
-      <div style="margin-top:1.5rem;">
-        <a href="#contact" class="btn-primary">Request Prospectus</a>
-      </div>
-    </div>
-  </div>
 
-  <div id="panel-algo" class="invest-panel">
-    <div class="invest-detail">
-      <h3>Algorithmic Co-Investment</h3>
-      <p>Participate directly in our proprietary algorithmic trading strategies. We run proven, back-tested derivative strategies on our own capital — and open select tranches to trusted investors seeking above-market returns.</p>
-      <ul class="invest-points">
-        <li>Skin-in-the-game: we invest our own capital in every strategy</li>
-        <li>Rigorous back-tested and live track record</li>
-        <li>Full transparency on strategy logic and risk parameters</li>
-        <li>Monthly reporting with granular trade-level data</li>
-        <li>Performance-based fee structure — aligned with your success</li>
-      </ul>
-    </div>
-    <div class="invest-highlight">
-      <span class="stat">Select</span>
-      <span class="stat-label">Invitation-Based Access</span>
-      <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
-        <span class="stat" style="font-size:2rem;">All</span>
-        <span class="stat-label">For Informed Investors</span>
+    <div id="panel-smallcase" class="invest-panel active">
+      <div class="invest-detail">
+        <h3>Expert-Built Smallcases</h3>
+        <p>Curated, theme-based equity baskets built by our research team and quantitative analysts — giving retail investors seamless access to institutional-grade portfolio construction.</p>
+        <ul class="invest-points">
+          <li>Thematic &amp; factor-based portfolios (quality, momentum, value)</li>
+          <li>Direct stock ownership — no fund-level fees or lock-ins</li>
+          <li>Systematic rebalancing based on quantitative triggers</li>
+          <li>Transparent holdings and methodology</li>
+          <li>Accessible via major broker integrations</li>
+        </ul>
       </div>
-      <div style="margin-top:1.5rem;">
-        <a href="#contact" class="btn-primary">Express Interest</a>
+      <div class="invest-highlight">
+        <span class="stat"><span class="rupee">₹</span>1L</span>
+        <span class="stat-label">Minimum Investment</span>
+        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+          <span class="stat" style="font-size:2rem;">Retail</span>
+          <span class="stat-label">Target Segment</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-pms" class="invest-panel">
+      <div class="invest-detail">
+        <h3>Portfolio Management Services (PMS)</h3>
+        <p>SEBI-regulated, individually managed equity portfolios for high-net-worth investors — combining our research edge with active risk management for superior long-term performance.</p>
+        <ul class="invest-points">
+          <li>Personalised portfolios tailored to your risk profile and objectives</li>
+          <li>Direct equity ownership with full transparency</li>
+          <li>Active management by our investment committee</li>
+          <li>Quarterly performance reviews and reporting</li>
+          <li>Dedicated relationship manager</li>
+        </ul>
+      </div>
+      <div class="invest-highlight">
+        <span class="stat"><span class="rupee">₹</span>50L</span>
+        <span class="stat-label">Minimum Investment (SEBI)</span>
+        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+          <span class="stat" style="font-size:2rem;">HNI</span>
+          <span class="stat-label">Target Segment</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="#contact" class="btn-primary">Schedule a Call</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-aif" class="invest-panel">
+      <div class="invest-detail">
+        <h3>Alternative Investment Fund (AIF)</h3>
+        <p>Our SEBI-registered AIF provides access to sophisticated, non-traditional strategies — including long/short equity, options writing, and special situations — for eligible institutional and ultra-HNI investors.</p>
+        <ul class="invest-points">
+          <li>Category I / II / III AIF structures (as applicable)</li>
+          <li>Absolute return focus with defined drawdown controls</li>
+          <li>Diversified across multiple strategies and instruments</li>
+          <li>Rigorous compliance and investor reporting</li>
+          <li>Access to strategies unavailable in traditional fund formats</li>
+        </ul>
+      </div>
+      <div class="invest-highlight">
+        <span class="stat"><span class="rupee">₹</span>1Cr</span>
+        <span class="stat-label">Minimum Investment (SEBI)</span>
+        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+          <span class="stat" style="font-size:2rem;">UHNI</span>
+          <span class="stat-label">Target Segment</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="#contact" class="btn-primary">Request Prospectus</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-algo" class="invest-panel">
+      <div class="invest-detail">
+        <h3>Algorithmic Co-Investment</h3>
+        <p>Participate directly in our proprietary algorithmic trading strategies. We run proven, back-tested derivative strategies on our own capital — and open select tranches to trusted investors seeking above-market returns.</p>
+        <ul class="invest-points">
+          <li>Skin-in-the-game: we invest our own capital in every strategy</li>
+          <li>Rigorous back-tested and live track record</li>
+          <li>Full transparency on strategy logic and risk parameters</li>
+          <li>Monthly reporting with granular trade-level data</li>
+          <li>Performance-based fee structure — aligned with your success</li>
+        </ul>
+      </div>
+      <div class="invest-highlight">
+        <span class="stat">Select</span>
+        <span class="stat-label">Invitation-Based Access</span>
+        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+          <span class="stat" style="font-size:2rem;">All</span>
+          <span class="stat-label">For Informed Investors</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="#contact" class="btn-primary">Express Interest</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1414,18 +1455,18 @@
       <p>By combining systematic equity investing with disciplined options trading, our strategy targets a CAGR meaningfully above what index funds alone can deliver — at manageable, defined risk.</p>
       <div class="returns-cards returns-cards-always">
         <div class="ret-card">
-          <div class="ret-card-label">Value</div>
-          <div class="ret-card-val">~<span class="rupee">₹</span>16Cr</div>
+          <div class="ret-card-label">Super</div>
+          <div class="ret-card-val">~<span class="rupee">₹</span>16.4Cr</div>
           <div class="ret-card-sub">₹1Cr → after 20 yrs</div>
         </div>
         <div class="ret-card">
-          <div class="ret-card-label">Premium</div>
-          <div class="ret-card-val">~<span class="rupee">₹</span>38Cr</div>
+          <div class="ret-card-label">Superior</div>
+          <div class="ret-card-val">~<span class="rupee">₹</span>29.8Cr</div>
           <div class="ret-card-sub">₹1Cr → after 20 yrs</div>
         </div>
         <div class="ret-card ret-card-featured">
-          <div class="ret-card-label">Ultimate</div>
-          <div class="ret-card-val">~<span class="rupee">₹</span>87Cr</div>
+          <div class="ret-card-label">Supreme</div>
+          <div class="ret-card-val">~<span class="rupee">₹</span>41.6Cr</div>
           <div class="ret-card-sub">₹1Cr → after 20 yrs</div>
         </div>
       </div>
@@ -1436,24 +1477,24 @@
         <p style="font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:1.25rem;">20-Year Growth from ₹1 Cr</p>
         <div class="chart-bars">
           <div class="chart-row">
-            <span class="chart-label">Index Funds</span>
+            <span class="chart-label">Index (~12%)</span>
             <div class="chart-bg"><div class="chart-fill" style="width:22%; background:var(--muted); animation-delay:0s"></div></div>
             <span class="chart-val" style="color:var(--muted)">~₹10Cr</span>
           </div>
           <div class="chart-row">
-            <span class="chart-label">Value</span>
+            <span class="chart-label">Super</span>
             <div class="chart-bg"><div class="chart-fill" style="width:36%; animation-delay:0.1s"></div></div>
-            <span class="chart-val">~₹16Cr</span>
+            <span class="chart-val">~₹16.4Cr</span>
           </div>
           <div class="chart-row">
-            <span class="chart-label">Premium</span>
-            <div class="chart-bg"><div class="chart-fill" style="width:56%; animation-delay:0.2s; background:var(--forest-mid)"></div></div>
-            <span class="chart-val">~₹38Cr</span>
+            <span class="chart-label">Superior</span>
+            <div class="chart-bg"><div class="chart-fill" style="width:68%; animation-delay:0.2s; background:var(--forest-mid)"></div></div>
+            <span class="chart-val">~₹29.8Cr</span>
           </div>
           <div class="chart-row">
-            <span class="chart-label">Ultimate</span>
+            <span class="chart-label">Supreme</span>
             <div class="chart-bg"><div class="chart-fill" style="width:100%; animation-delay:0.3s; background:var(--leaf)"></div></div>
-            <span class="chart-val">~₹87Cr</span>
+            <span class="chart-val">~₹41.6Cr</span>
           </div>
         </div>
         <div style="margin-top:2rem; padding-top:1.5rem; border-top:0.5px solid var(--border);">
@@ -1479,23 +1520,23 @@
   <div class="testi-grid">
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">It has been great working with Ratan and Peepal Tree. Highly professional, competent and trustworthy! I was not earlier aware that I can earn "on top" return on my portfolio from Algo Trading, and as I am busy in my work, I was simply missing out on this gain. Thanks to Peepal Tree my capital has grown more than had I not capitalized on this opportunity offered by Peepal Tree. I will surely recommend this to all who are interested in growing their capital.</p>
+      <p class="testi-quote">I had always invested in equities and mutual funds, but never realised that algo trading could generate an additional layer of returns on top of my existing portfolio — without me having to do anything. Ratan and the Peepal Tree team explained it clearly, patiently, and honestly. What impressed me most was their skin-in-the-game approach — they invest their own money too. My portfolio has meaningfully outperformed what I would have earned otherwise. A highly recommended team for anyone serious about growing their wealth.</p>
       <div class="testi-divider"></div>
-      <div class="testi-name">Senior Executive, Mumbai</div>
+      <div class="testi-name">Senior Professional, Mumbai</div>
       <div class="testi-desc">Partner since 2023</div>
     </div>
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">It has been great working with Ratan and Peepal Tree. Highly professional, competent and trustworthy! I was not earlier aware that I can earn "on top" return on my portfolio from Algo Trading, and as I am busy in my work, I was simply missing out on this gain. Thanks to Peepal Tree my capital has grown more than had I not capitalized on this opportunity offered by Peepal Tree. I will surely recommend this to all who are interested in growing their capital.</p>
+      <p class="testi-quote">After years of being let down by banks and so-called financial advisors who prioritised their commissions over my returns, Peepal Tree was a breath of fresh air. No hidden charges, proactive monthly updates, and a team that genuinely treats you as a partner. Bharat and Ratan are knowledgeable, accessible, and completely transparent. For a busy entrepreneur like me, the peace of mind alone is worth it — and the returns have been the cherry on top.</p>
       <div class="testi-divider"></div>
       <div class="testi-name">Entrepreneur, Delhi</div>
       <div class="testi-desc">Partner since 2022</div>
     </div>
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">It has been great working with Ratan and Peepal Tree. Highly professional, competent and trustworthy! I was not earlier aware that I can earn "on top" return on my portfolio from Algo Trading, and as I am busy in my work, I was simply missing out on this gain. Thanks to Peepal Tree my capital has grown more than had I not capitalized on this opportunity offered by Peepal Tree. I will surely recommend this to all who are interested in growing their capital.</p>
+      <p class="testi-quote">What struck me when I first saw Peepal Tree's projections was how much capital I had effectively 'lost' by not acting sooner. I had idle savings earning subpar returns for years. Since partnering with them, the combination of systematic equity investing and their options strategies has delivered returns I simply could not have achieved on my own. The team is sharp, ethical, and genuinely invested in your success. I've already referred two close colleagues — and I wouldn't do that unless I truly believed in what they do.</p>
       <div class="testi-divider"></div>
-      <div class="testi-name">Corporate Professional, Hyderabad</div>
+      <div class="testi-name">Finance Director, Hyderabad</div>
       <div class="testi-desc">Partner since 2023</div>
     </div>
   </div>
@@ -1601,6 +1642,13 @@
 </div>
 
 <script>
+  function showTopPanel(id, btn) {
+    document.querySelectorAll('.top-invest-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.top-invest-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('top-invest-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
   function showPanel(id, event) {
     document.querySelectorAll('.invest-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.invest-tab').forEach(t => t.classList.remove('active'));
