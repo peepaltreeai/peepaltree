@@ -586,20 +586,22 @@
 
   
   /* INVEST */
-  #invest { background: var(--white); }
+  #invest { background: var(--ink); }
+  #invest .eyebrow { color: var(--leaf); }
+  #invest h2 { color: var(--white); }
 
   .top-invest-tabs {
     display: flex;
-    border-bottom: 0.5px solid var(--border);
+    border-bottom: 0.5px solid rgba(255,255,255,0.1);
     margin-bottom: 2.5rem;
   }
   .top-invest-tab {
     font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); padding: 0.75rem 2rem; cursor: pointer;
+    color: rgba(255,255,255,0.4); padding: 0.75rem 2rem; cursor: pointer;
     border: none; background: none; border-bottom: 2px solid transparent;
     margin-bottom: -0.5px; transition: color 0.2s, border-color 0.2s;
   }
-  .top-invest-tab.active { color: var(--forest); border-bottom-color: var(--forest); }
+  .top-invest-tab.active { color: var(--leaf); border-bottom-color: var(--leaf); }
   .top-invest-panel { display: none; }
   .top-invest-panel.active { display: block; }
 
@@ -615,41 +617,41 @@
   .invest-tabs {
     display: flex;
     gap: 0;
-    border-bottom: 0.5px solid var(--border);
+    border-bottom: 0.5px solid rgba(255,255,255,0.1);
     margin-bottom: 3rem;
   }
   .invest-tab {
     font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); padding: 0.75rem 2rem; cursor: pointer;
+    color: rgba(255,255,255,0.4); padding: 0.75rem 2rem; cursor: pointer;
     border-bottom: 2px solid transparent; margin-bottom: -0.5px;
     transition: color 0.2s, border-color 0.2s;
     background: none; border-top: none; border-left: none; border-right: none;
   }
-  .invest-tab.active { color: var(--forest); border-bottom-color: var(--forest); }
+  .invest-tab.active { color: var(--leaf); border-bottom-color: var(--leaf); }
   .invest-panel { display: none; }
   .invest-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 
-  .invest-detail h3 { margin-bottom: 1rem; }
-  .invest-detail p { margin-bottom: 1.5rem; }
+  .invest-detail h3 { margin-bottom: 1rem; color: var(--white); }
+  .invest-detail p { margin-bottom: 1.5rem; color: rgba(255,255,255,0.58); }
 
   .invest-points { list-style: none; margin-top: 1.5rem; }
   .invest-points li {
     display: flex; gap: 0.75rem; align-items: flex-start;
-    font-size: 0.88rem; color: var(--muted); padding: 0.5rem 0;
-    border-bottom: 0.5px solid var(--border);
+    font-size: 0.88rem; color: rgba(255,255,255,0.55); padding: 0.5rem 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
   }
   .invest-points li:last-child { border-bottom: none; }
-  .invest-points li::before { content: "→"; color: var(--forest); flex-shrink: 0; }
+  .invest-points li::before { content: "→"; color: var(--leaf); flex-shrink: 0; }
 
   .invest-highlight {
-    background: var(--surface); border: 0.5px solid var(--border);
+    background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.1);
     padding: 2.5rem; border-radius: 2px; border-left: 2px solid var(--forest);
   }
   .invest-highlight .stat {
     font-family: var(--sans); font-size: 3rem; font-weight: 300;
-    color: var(--forest); display: block; margin-bottom: 0.25rem; letter-spacing: -0.02em;
+    color: var(--leaf); display: block; margin-bottom: 0.25rem; letter-spacing: -0.02em;
   }
-  .invest-highlight .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .invest-highlight .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; }
 
   
 
@@ -883,24 +885,24 @@
     </div>
     <div class="pillars fade-up">
       <div class="pillar">
-        <span class="pillar-glyph">⊕</span>
-        <h4>Protect Capital</h4>
-        <p>We do not undertake high-risk strategies. Capital preservation is the foundation of every decision.</p>
-      </div>
-      <div class="pillar">
-        <span class="pillar-glyph">⟳</span>
-        <h4>Grow Capital</h4>
-        <p>Proven options strategies combined with systematic investing for sustainable above-index returns.</p>
+        <span class="pillar-glyph">∂</span>
+        <h4>Quantitative Rigor</h4>
+        <p>Proven derivative and algorithmic strategies built on decades of market research.</p>
       </div>
       <div class="pillar">
         <span class="pillar-glyph">◈</span>
-        <h4>Skin in the Game</h4>
-        <p>Partnership model — we invest our own capital alongside yours. Interests are aligned.</p>
+        <h4>Institutional Pedigree</h4>
+        <p>Team alumni of Goldman Sachs, UBS, KPMG, Microsoft and other global leaders.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-glyph">⟳</span>
+        <h4>Sustainable Returns</h4>
+        <p>Above-market performance through disciplined risk management and diversification.</p>
       </div>
       <div class="pillar">
         <span class="pillar-glyph">◉</span>
-        <h4>Peace of Mind</h4>
-        <p>Full transparency, proactive updates, no hidden charges. You are a partner, not a number.</p>
+        <h4>Aligned Interests</h4>
+        <p>We invest our own capital alongside yours — our incentives are fully aligned.</p>
       </div>
     </div>
   </div>
@@ -1141,29 +1143,29 @@
   <div id="top-invest-vp" class="top-invest-panel active fade-up">
     <div class="vp-layout">
       <div class="vp-left">
-        <p>We believe that intelligent, disciplined investing — anchored in rigorous research, proven strategies, and cutting-edge technology — creates enduring wealth without compromising on principles or risk management.</p>
-        <p>Our approach is systematic, transparent, and built for the long term. We take the same care with your capital that we take with our own — because we invest alongside you.</p>
+        <p style="color:rgba(255,255,255,0.58);">We believe that intelligent, disciplined investing — anchored in rigorous research, proven strategies, and cutting-edge technology — creates enduring wealth without compromising on principles or risk management.</p>
+        <p style="color:rgba(255,255,255,0.58);">Our approach is systematic, transparent, and built for the long term. We take the same care with your capital that we take with our own — because we invest alongside you.</p>
       </div>
       <div class="vp-pillars">
-        <div class="vp-pillar">
-          <span class="vp-pillar-glyph">∂</span>
-          <h4>Quantitative Rigor</h4>
-          <p>Proven derivative and algorithmic strategies built on decades of market research.</p>
+        <div class="vp-pillar" style="border-color:rgba(255,255,255,0.09);">
+          <span class="vp-pillar-glyph">⊕</span>
+          <h4 style="color:var(--white);">Protect Capital</h4>
+          <p style="color:rgba(255,255,255,0.46);">We do not undertake high-risk strategies. Capital preservation is the foundation of every decision.</p>
         </div>
-        <div class="vp-pillar">
-          <span class="vp-pillar-glyph">◈</span>
-          <h4>Institutional Pedigree</h4>
-          <p>Team alumni of Goldman Sachs, UBS, KPMG, Microsoft and other global leaders.</p>
-        </div>
-        <div class="vp-pillar">
+        <div class="vp-pillar" style="border-color:rgba(255,255,255,0.09);">
           <span class="vp-pillar-glyph">⟳</span>
-          <h4>Sustainable Returns</h4>
-          <p>Above-market performance through disciplined risk management and diversification.</p>
+          <h4 style="color:var(--white);">Grow Capital</h4>
+          <p style="color:rgba(255,255,255,0.46);">Proven options strategies combined with systematic investing for sustainable above-index returns.</p>
         </div>
-        <div class="vp-pillar">
+        <div class="vp-pillar" style="border-color:rgba(255,255,255,0.09);">
+          <span class="vp-pillar-glyph">◈</span>
+          <h4 style="color:var(--white);">Skin in the Game</h4>
+          <p style="color:rgba(255,255,255,0.46);">Partnership model — we invest our own capital alongside yours. Interests are aligned.</p>
+        </div>
+        <div class="vp-pillar" style="border-color:rgba(255,255,255,0.09);">
           <span class="vp-pillar-glyph">◉</span>
-          <h4>Aligned Interests</h4>
-          <p>We invest our own capital alongside yours — our incentives are fully aligned.</p>
+          <h4 style="color:var(--white);">Peace of Mind</h4>
+          <p style="color:rgba(255,255,255,0.46);">Full transparency, proactive updates, no hidden charges. You are a partner, not a number.</p>
         </div>
       </div>
     </div>
@@ -1193,7 +1195,7 @@
       <div class="invest-highlight">
         <span class="stat"><span class="rupee">₹</span>1L</span>
         <span class="stat-label">Minimum Investment</span>
-        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <div style="margin-top:2rem; border-top: 0.5px solid rgba(255,255,255,0.08); padding-top:1.5rem;">
           <span class="stat" style="font-size:2rem;">Retail</span>
           <span class="stat-label">Target Segment</span>
         </div>
@@ -1218,7 +1220,7 @@
       <div class="invest-highlight">
         <span class="stat"><span class="rupee">₹</span>50L</span>
         <span class="stat-label">Minimum Investment (SEBI)</span>
-        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <div style="margin-top:2rem; border-top: 0.5px solid rgba(255,255,255,0.08); padding-top:1.5rem;">
           <span class="stat" style="font-size:2rem;">HNI</span>
           <span class="stat-label">Target Segment</span>
         </div>
@@ -1243,7 +1245,7 @@
       <div class="invest-highlight">
         <span class="stat"><span class="rupee">₹</span>1Cr</span>
         <span class="stat-label">Minimum Investment (SEBI)</span>
-        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <div style="margin-top:2rem; border-top: 0.5px solid rgba(255,255,255,0.08); padding-top:1.5rem;">
           <span class="stat" style="font-size:2rem;">UHNI</span>
           <span class="stat-label">Target Segment</span>
         </div>
@@ -1268,7 +1270,7 @@
       <div class="invest-highlight">
         <span class="stat">Select</span>
         <span class="stat-label">Invitation-Based Access</span>
-        <div style="margin-top:2rem; border-top: 0.5px solid var(--border); padding-top:1.5rem;">
+        <div style="margin-top:2rem; border-top: 0.5px solid rgba(255,255,255,0.08); padding-top:1.5rem;">
           <span class="stat" style="font-size:2rem;">All</span>
           <span class="stat-label">For Informed Investors</span>
         </div>
